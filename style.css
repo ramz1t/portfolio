@@ -1,0 +1,87 @@
+body {
+    background: rgb(12, 12, 28);
+    background: -moz-linear-gradient(47deg, rgba(12, 12, 28, 1) 0%, rgba(0, 24, 28, 1) 34%, rgba(0, 20, 27, 1) 66%, rgba(12, 12, 28, 1) 100%);
+    background: -webkit-linear-gradient(47deg, rgba(12, 12, 28, 1) 0%, rgba(0, 24, 28, 1) 34%, rgba(0, 20, 27, 1) 66%, rgba(12, 12, 28, 1) 100%);
+    background: linear-gradient(47deg, rgba(12, 12, 28, 1) 0%, rgba(0, 24, 28, 1) 34%, rgba(0, 20, 27, 1) 66%, rgba(12, 12, 28, 1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#0c0c1c", endColorstr="#0c0c1c", GradientType=1);
+    color: white;
+    margin: 0;
+}
+
+.page {
+    display: grid;
+    height: 100vh;
+    width: 100vw;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr 2fr 1fr;
+    grid-template-areas:
+        'name nav nav nav'
+        'main main main controls'
+        'area area arrows arrows';
+}
+
+.page>* {
+    outline: 1px solid white;
+}
+
+.title {
+    font-family: 'Kanit', sans-serif;
+    font-size: 40px;
+}
+
+.name {
+    grid-area: name;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav {
+    grid-area: nav;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+main {
+    grid-area: main;
+}
+
+.controls {
+    grid-area: controls;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.area {
+    grid-area: area;
+}
+
+.arrows {
+    grid-area: arrows;
+    display: flex;
+}
+
+.arrows div {
+    outline: 1px solid white;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.arrows div:hover {
+    background: rgba(255, 255, 255, 0.008);
+}
+
+.arrows div span {
+    scale: 1.5;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
