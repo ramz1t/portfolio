@@ -1,0 +1,24 @@
+.timeline {
+    border-left: 3px solid white;
+    margin-top: 20px;
+}
+
+.timeline-inner {
+    translate: 0 -25px;
+}
+
+.timeline-body {
+    padding-left: 20px;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.timeline-title {
+    display: list-item;
+    translate: 20px;
+    margin: 0;
+}
+
+.timeline-date {
+    color: rgb(206, 206, 206)
+}
