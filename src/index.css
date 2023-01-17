@@ -1,0 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Rowdies&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: "Rowdies-Regular";
+    src: url("../fonts/Rowdies-Regular.ttf");
+}
