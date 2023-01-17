@@ -7,9 +7,7 @@ function App() {
     return (
         <div className="relative">
             <Navbar />
-            <Routes>
-                <Route path='/' element={<Home />} />
-            </Routes>
+            <Home />
         </div>
     )
 }

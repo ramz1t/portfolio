@@ -9,6 +9,7 @@ const Home = () => {
     useEffect(() => {
 
         const scene = new THREE.Scene()
+        scene.background = new THREE.Color(0xFFFFFF)
         const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000)
         camera.position.set(0, 10, 20)
         const renderer = new THREE.WebGLRenderer({
@@ -20,7 +21,7 @@ const Home = () => {
         scene.add(pointLight);
         let lightHelper = new THREE.PointLightHelper(pointLight)
         // scene.add(lightHelper)
-        pointLight.position.set(-5, 5, 10)
+        pointLight.position.set(0, 10, 10)
         const ambientLight = new THREE.AmbientLight(0xffffff)
         scene.add(ambientLight)
 
@@ -29,8 +30,8 @@ const Home = () => {
         loader.load('./models/safe.gltf', (gltf) => {
             safe = gltf.scene
             safe.position.set(0, 0, -5)
-            scene.add(safe)
-            safe.scale.set(2, 2, 2)
+            // scene.add(safe)
+            safe.scale.set(4, 4, 4)
             safe.rotation.y = 300
         })
 
@@ -49,12 +50,24 @@ const Home = () => {
 
     return (
         <>
-            <div className='container mx-auto'>
-                <h1>Home</h1>
-            </div>
+            <section className='h-screen w-full bg-primary-100'>
+                <div className="container mx-auto h-full lg:grid grid-cols-2 place-items-center">
+                    <div className='flex flex-col gap-5'>
+                        <h1 className='text-5xl text-primary-900 leading-tight'>Hi, my name is Timur<br />And I'm a software developer</h1>
+                        <h2 className='text-xl text-primary-800'>I like making products, that are useful for people</h2>
+                        <button className='w-fit text-primary-700 rounded-lg border-primary-700 border-2 p-3 hover:border-primary-800 hover:text-primary-800 hover:bg-primary-200'>Contact me</button>
+                    </div>
+                    <img src="./images/me.png" alt="timur ramazanov" className='h-full' />
+                </div>
+            </section>
+            <section className="h-screen">
+                about
+            </section>
+            <section className="h-screen">
+                projects
+            </section>
             <canvas className='absolute left-0 top-0 -z-10' id="bg"></canvas>
         </>
-
     )
 }
 

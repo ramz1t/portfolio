@@ -7,7 +7,7 @@ const NavButton = ({ position, name }) => {
     }
 
     return (
-        <div className='text-white' onClick={handleClick}>{name}</div>
+        <div onClick={handleClick}>{name}</div>
     )
 }
 
