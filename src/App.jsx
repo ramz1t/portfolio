@@ -1,13 +1,18 @@
 import Navbar from "./components/Navbar"
-import { Routes, Route } from "react-router-dom"
-import Home from "./pages/Home"
+import { useRef } from "react"
+import Landing from "./pages/Landing"
+import About from "./pages/About"
 
 function App() {
 
+    const LandingRef = useRef(null)
+    const AboutRef = useRef(null)
+
     return (
         <div className="relative">
-            <Navbar />
-            <Home />
+            <Navbar refs={[LandingRef, AboutRef, '', '']} />
+            <Landing ref={LandingRef} />
+            <About ref={AboutRef} />
         </div>
     )
 }

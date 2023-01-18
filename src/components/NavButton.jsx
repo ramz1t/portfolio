@@ -1,13 +1,10 @@
 import React from 'react'
 
-const NavButton = ({ position, name }) => {
-
-    const handleClick = () => {
-        console.log('scroll to', position)
-    }
-
+const NavButton = ({ text, refObj }) => {
     return (
-        <div onClick={handleClick}>{name}</div>
+        <div className='cursor-pointer text-2xl text-primary-900' onClick={() => refObj.current.scrollIntoView()}>
+            {text}
+        </div>
     )
 }
 
