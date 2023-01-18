@@ -51,13 +51,13 @@ const Landing = ({ ref }) => {
 
     return (
         <>
-            <section ref={ref} className='h-screen w-full bg-primary-100'>
+            <section ref={ref} className='min-h-screen w-full pt-15 bg-primary-100'>
                 <div className="container p-2 mx-auto h-full lg:grid grid-cols-2 place-items-center">
                     <div className='flex flex-col gap-5'>
                         <h1 className='text-5xl text-primary-900 leading-tight'>Hi, my name is Timur<br />And I'm a software developer</h1>
                         <h2 className='text-xl text-primary-800'>I like making products, that are useful for people</h2>
                         <button className='w-fit text-primary-700 rounded-lg border-primary-700 border-2 p-3 
-                        hover:border-primary-800 hover:text-primary-800 hover:bg-primary-200 hover:shadow-sm'>
+                        hover:border-primary-800 hover:text-primary-800 hover:scale-105 hover:shadow-sm transition-all'>
                             Contact me
                         </button>
                     </div>
