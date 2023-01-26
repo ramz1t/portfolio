@@ -6,7 +6,7 @@ import LinksList from './LinksList'
 import Hamburger from 'hamburger-react'
 
 const buttons = [
-    { text: 'Introduction', blockId: 'landing' },
+    { text: 'Introduction', blockId: 'landing', init: true },
     { text: 'Education and Hobbies', blockId: 'ed_and_hobbies' },
     { text: 'Projects', blockId: 'projects' },
     { text: 'Contacts', blockId: 'contacts' }
@@ -19,9 +19,9 @@ const Navbar = () => {
 
     }, [open])
     return (
-        <nav id='landing' className='w-full flex justify-center'>
+        <nav className='w-full flex justify-center'>
             <div className='flex container mx-auto justify-between items-center p-2 z-10 fixed'>
-                <NavButton text='TR' />
+                <p className='text-2xl text-primary-900'>TR</p>
                 <Hamburger distance='lg' rounded color="#03045e" toggled={open} toggle={setOpen} />
             </div>
             <div className={`fixed h-screen w-screen md:w-96 lg:w-96 lg:p-10 p-5 bg-[#fafafa] top-0 z-0

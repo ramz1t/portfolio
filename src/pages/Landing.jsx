@@ -5,7 +5,7 @@ import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
 
 
 
-const Landing = ({ ref }) => {
+const Landing = () => {
 
     useEffect(() => {
 
@@ -51,7 +51,7 @@ const Landing = ({ ref }) => {
 
     return (
         <>
-            <section ref={ref} className='h-screen w-full bg-primary-100'>
+            <section id='landing' className='h-screen w-full bg-primary-100'>
                 <div className="container py-5 mx-auto h-full lg:grid grid-cols-2 place-items-center">
                     <div className='flex flex-col gap-5'>
                         <h1 className='text-5xl text-primary-900 leading-tight'>Hi, my name is Timur<br />And I'm a software developer</h1>
