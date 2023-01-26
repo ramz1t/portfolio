@@ -20,7 +20,7 @@ const Navbar = () => {
     }, [open])
     return (
         <nav className='w-full flex justify-center'>
-            <div className='flex container mx-auto justify-between items-center p-2 z-10 fixed'>
+            <div className='flex container mx-auto justify-between items-center p-5 z-10 fixed'>
                 <p className='text-2xl text-primary-900'>TR</p>
                 <Hamburger distance='lg' rounded color="#03045e" toggled={open} toggle={setOpen} />
             </div>

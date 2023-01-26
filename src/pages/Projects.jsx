@@ -2,8 +2,11 @@ import React from 'react'
 
 const Projects = () => {
     return (
-        <section id='projects' className='min-h-screen'>
-            Projects
+        <section id='projects'>
+            <div className="page-part">
+                Projects
+            </div>
+
         </section>
     )
 }

@@ -8,13 +8,13 @@ import Projects from "./pages/Projects"
 function App() {
 
     return (
-        <div className="relative">
+        <>
             <Navbar />
             <Landing />
             <About />
             <Projects />
             <Contact />
-        </div>
+        </>
     )
 }
 

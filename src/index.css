@@ -12,3 +12,11 @@
 body * {
     @apply box-border
 }
+
+.page-part {
+    @apply container p-5 mx-auto min-h-screen lg:grid grid-cols-2 place-items-center flex items-center flex-col
+}
+
+section {
+    @apply min-h-screen w-full snap-start
+}
