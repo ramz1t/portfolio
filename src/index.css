@@ -8,3 +8,7 @@
     font-family: "Rowdies-Regular";
     src: url("../fonts/Rowdies-Regular.ttf");
 }
+
+body * {
+    @apply box-border
+}
