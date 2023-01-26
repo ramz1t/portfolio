@@ -7,8 +7,7 @@ import Hamburger from 'hamburger-react'
 
 const labels = ['Introduction', 'Education and Hobbies', 'Projects', 'Contacts']
 
-const Navbar = ({ refs }) => {
-    console.log(refs)
+const Navbar = () => {
     const [open, setOpen] = useState(false)
 
     useEffect(() => {
@@ -17,13 +16,15 @@ const Navbar = ({ refs }) => {
     return (
         <nav className='w-full'>
             <div className='flex container mx-auto justify-between items-center p-2 z-10 fixed'>
-                <NavButton text='TR' refObj={refs[0]} />
+                <NavButton text='TR' />
                 <Hamburger distance='lg' rounded color="#03045e" toggled={open} toggle={setOpen} />
             </div>
             <div className={`fixed h-screen w-screen md:w-96 lg:w-96 lg:p-10 p-5 bg-[#fafafa] top-0 z-0
             flex flex-col justify-evenly items-center lg:items-start transition-all duration-500
             ${open ? 'right-0 ' : '-right-96'}`}>
-                {[...Array(refs.length).keys()].map((val, key) => <NavButton key={key} text={labels[val]} refObj={refs[val]} />)}
+
+                {labels.map((label, key) => <NavButton key={key} text={label} />)}
+
                 <hr className='h-[2px] bg-primary-800 w-full' />
                 <LinksList />
             </div>

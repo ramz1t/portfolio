@@ -1,17 +1,23 @@
 import React from 'react'
+import GithubIcon from '../assets/github.svg'
+import MailIcon from '../assets/email.svg'
+import TgIcon from '../assets/telegram.svg'
 
 const links = [
     {
         href: 'https://github.com/ramz1t',
-        icon: 'github'
+        icon: GithubIcon,
+        alt: 'github profile'
     },
     {
         href: 'https://t.me/ramz1q',
-        icon: 'telegram'
+        icon: TgIcon,
+        alt: 'telegram link'
     },
     {
         href: 'mailto:timurram007@gmail.com',
-        icon: 'email'
+        icon: MailIcon,
+        alt: 'email adress'
     }
 ]
 
@@ -19,11 +25,9 @@ const LinksList = () => {
     return (
         <div className='flex justify-evenly w-full'>
             {links.map((link, key) => (
-                <div>
-                    <a key={key} target='_blank' href={link.href}>
-                        <svg className='w-10 h-10 hover:scale-105 bg-primary-100' href={`./icons/${link.icon}.svg`}></svg>
-                    </a>
-                </div>
+                <a key={key} target='_blank' className='hover:scale-110 transition-all scale-100 w-10 h-10 flex items-center justify-center' href={link.href}>
+                    <img src={link.icon} alt={link.alt} srcset="" />
+                </a>
             ))}
         </div>
     )

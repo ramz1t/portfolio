@@ -5,14 +5,11 @@ import About from "./pages/About"
 
 function App() {
 
-    const LandingRef = useRef(null)
-    const AboutRef = useRef(null)
-
     return (
         <div className="relative">
-            <Navbar refs={[LandingRef, AboutRef, '', '']} />
-            <Landing ref={LandingRef} />
-            <About ref={AboutRef} />
+            <Navbar />
+            <Landing />
+            <About />
         </div>
     )
 }

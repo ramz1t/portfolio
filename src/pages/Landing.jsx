@@ -51,7 +51,7 @@ const Landing = ({ ref }) => {
 
     return (
         <>
-            <section ref={ref} className='min-h-screen w-full pt-15 bg-primary-100'>
+            <section ref={ref} className='h-screen w-full bg-primary-100'>
                 <div className="container p-2 mx-auto h-full lg:grid grid-cols-2 place-items-center">
                     <div className='flex flex-col gap-5'>
                         <h1 className='text-5xl text-primary-900 leading-tight'>Hi, my name is Timur<br />And I'm a software developer</h1>
@@ -61,7 +61,10 @@ const Landing = ({ ref }) => {
                             Contact me
                         </button>
                     </div>
-                    <img src="./images/me.png" alt="timur ramazanov" className='h-full' />
+                    <div className="h-screen">
+                        <img src="./images/me.png" alt="timur ramazanov" className='h-100 w-auto' />
+                    </div>
+
                 </div>
             </section>
             <canvas className='absolute left-0 top-0 -z-10' id="bg"></canvas>
