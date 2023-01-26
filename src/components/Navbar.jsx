@@ -5,7 +5,12 @@ import { AiOutlineMenu } from 'react-icons/ai'
 import LinksList from './LinksList'
 import Hamburger from 'hamburger-react'
 
-const labels = ['Introduction', 'Education and Hobbies', 'Projects', 'Contacts']
+const buttons = [
+    { text: 'Introduction', blockId: 'landing' },
+    { text: 'Education and Hobbies', blockId: 'ed_and_hobbies' },
+    { text: 'Projects', blockId: 'projects' },
+    { text: 'Contacts', blockId: 'contacts' }
+]
 
 const Navbar = () => {
     const [open, setOpen] = useState(false)
@@ -14,7 +19,7 @@ const Navbar = () => {
 
     }, [open])
     return (
-        <nav className='w-full flex justify-center'>
+        <nav id='landing' className='w-full flex justify-center'>
             <div className='flex container mx-auto justify-between items-center p-2 z-10 fixed'>
                 <NavButton text='TR' />
                 <Hamburger distance='lg' rounded color="#03045e" toggled={open} toggle={setOpen} />
@@ -23,7 +28,7 @@ const Navbar = () => {
             flex flex-col justify-evenly items-center lg:items-start transition-all duration-500
             ${open ? 'right-0 ' : '-right-full md:-right-96 lg:-right-96'}`}>
 
-                {labels.map((label, key) => <NavButton key={key} text={label} />)}
+                {buttons.map((button, key) => <NavButton key={key} {...button} />)}
 
                 <hr className='h-[2px] bg-primary-800 w-full' />
                 <LinksList />

@@ -1,8 +1,8 @@
 import React from 'react'
 
-const About = ({ ref }) => {
+const About = () => {
     return (
-        <section ref={ref} className="h-screen">
+        <section id='ed_and_hobbies' className="h-screen">
             Education and Hobbies
         </section>
     )
