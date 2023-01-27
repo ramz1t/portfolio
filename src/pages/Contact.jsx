@@ -42,8 +42,8 @@ const Contact = () => {
                         <input ref={subjectRef} className='h-8 px-4 py-5 rounded-md' type="text" />
                         <p className='text-2xl'>Message:</p>
                         <textarea ref={messageRef} className='h-24 px-4 py-5 rounded-md' type="text" />
-                        <div className="flex flex-col flex-col-reverse md:flex-row justify-between items-center pt-7 gap-9">
-                            <LinksList className='w-full md:w-1/2 md:!justify-start gap-5' />
+                        <div className="flex flex-col-reverse md:flex-row justify-between items-center pt-7 gap-9">
+                            <LinksList className='md:w-1/2 md:!justify-start gap-5' />
                             <button className='bg-primary-900 text-slate-300 py-3 rounded-lg hover:scale-105 w-full md:w-fit px-10 md:ml-10 transition-all'>Send</button>
                         </div>
                         {/* <button className='text-sm text-slate-400 hover:text-slate-500 w-fit pt-3' type='button' onClick={clearForm}>Clear form</button> */}
