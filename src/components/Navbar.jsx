@@ -21,7 +21,7 @@ const Navbar = () => {
     return (
         <nav className='w-full flex justify-center'>
             <div className='flex container mx-auto justify-between items-center p-5 z-10 fixed'>
-                <p className='text-2xl text-primary-900'>TR</p>
+                <p className='text-2xl text-primary-900 cursor-pointer' onClick={() => { document.getElementById('landing').scrollIntoView({ behavior: 'smooth' }) }}>TR</p>
                 <Hamburger distance='lg' rounded color="#03045e" toggled={open} toggle={setOpen} />
             </div>
             <div className={`fixed h-screen w-screen md:w-96 lg:w-96 lg:p-10 p-5 bg-[#fafafa] top-0 z-0
