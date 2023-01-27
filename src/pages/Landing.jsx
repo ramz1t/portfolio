@@ -53,11 +53,11 @@ const Landing = () => {
         <>
             <section id='landing' className='bg-primary-100/[0.5]'>
                 <div className="page-part !pt-20">
-                    <div className='flex flex-col gap-5'>
+                    <div className='flex flex-col gap-5 w-full'>
                         <h1 className='text-5xl text-primary-900 leading-tight'>Hi, my name is Timur<br />And I'm a software developer</h1>
                         <h2 className='text-xl text-primary-800'>I like making products, that are useful for people</h2>
-                        <button className='w-fit text-primary-700 rounded-lg border-primary-700 border-2 p-3 
-                        hover:border-primary-800 hover:text-primary-800 hover:scale-105 hover:shadow-sm transition-all'
+                        <button className='w-fit text-primary-800 rounded-lg border-primary-800 border-2 p-3 
+                        hover:border-primary-900 hover:text-primary-900 hover:scale-105 hover:shadow-sm transition-all'
                             onClick={() => document.getElementById('contacts').scrollIntoView({ behavior: 'smooth' })}>
                             Contact me
                         </button>
