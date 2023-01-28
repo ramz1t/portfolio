@@ -1,4 +1,5 @@
 import React from 'react'
+import { education } from '../data'
 
 const EdTimelineItem = ({ title, date }) => {
     return (
@@ -9,11 +10,16 @@ const EdTimelineItem = ({ title, date }) => {
     )
 }
 
-const EdTimeline = ({ elList }) => {
+const EdTimeline = () => {
     return (
-        <>
-            {elList.map((ed, key) => <EdTimelineItem key={key} title={ed.title} date={ed.date} />)}
-        </>
+        <div className='w-full'>
+            <h1 className='text-5xl pb-14'>Education</h1>
+            <div className='ml-1 pl-4 border-l-2 border-white'>
+                <div className='-translate-y-5'>
+                    {education.map((ed, key) => <EdTimelineItem key={key} title={ed.title} date={ed.date} />)}
+                </div>
+            </div>
+        </div>
     )
 }
 

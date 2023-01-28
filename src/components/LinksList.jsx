@@ -1,25 +1,5 @@
 import React from 'react'
-import GithubIcon from '../assets/github.svg'
-import MailIcon from '../assets/email.svg'
-import TgIcon from '../assets/telegram.svg'
-
-const links = [
-    {
-        href: 'https://github.com/ramz1t',
-        icon: GithubIcon,
-        alt: 'github profile'
-    },
-    {
-        href: 'https://t.me/ramz1q',
-        icon: TgIcon,
-        alt: 'telegram link'
-    },
-    {
-        href: 'mailto:timurram007@gmail.com',
-        icon: MailIcon,
-        alt: 'email adress'
-    }
-]
+import { links } from '../data'
 
 const LinksList = ({ className }) => {
     return (
