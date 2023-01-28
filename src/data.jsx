@@ -99,7 +99,7 @@ export const aboutList = [
         data: age
     },
     {
-        title: 'Origin:',
+        title: 'Location:',
         data: 'Moscow, Russia'
     },
     {
@@ -126,5 +126,20 @@ export const links = [
         href: 'mailto:timurram007@gmail.com',
         icon: MailIcon,
         alt: 'email adress'
+    }
+]
+
+export const hobbies = [
+    {
+        name: 'Skiing and hiking',
+        url: './images/skiing.jpg'
+    },
+    {
+        name: 'Coding',
+        url: './images/coding.jpg'
+    },
+    {
+        name: 'Drone photography',
+        url: './images/drone.jpg'
     }
 ]

@@ -12,7 +12,7 @@ const EdTimelineItem = ({ title, date }) => {
 
 const EdTimeline = () => {
     return (
-        <div className='w-full'>
+        <div className='w-full h-full'>
             <h1 className='text-5xl pb-14'>Education</h1>
             <div className='ml-1 pl-4 border-l-2 border-white'>
                 <div className='-translate-y-5'>

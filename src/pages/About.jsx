@@ -1,6 +1,7 @@
 import React from 'react'
 import AboutForm from '../components/AboutForm'
 import EdTimeline from '../components/EdTimeline'
+import HobbiesList from '../components/HobbiesList'
 import SkillList from '../components/SkillList'
 import { stack, education } from '../data'
 
@@ -14,7 +15,7 @@ const About = () => {
                 <AboutForm />
                 <SkillList />
                 <EdTimeline />
-                <div>Hobbies</div>
+                <HobbiesList />
             </div>
 
         </section>
