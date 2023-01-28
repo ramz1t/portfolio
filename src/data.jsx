@@ -1,4 +1,4 @@
-import { SiJavascript, SiFastapi, SiPostgresql, SiReact, SiPython, SiGit, SiDocker, SiNotion, SiCplusplus } from 'react-icons/si'
+import { SiJavascript, SiFastapi, SiPostgresql, SiReact, SiPython, SiGit, SiDocker, SiNotion, SiCplusplus, SiDjango, SiTelegram, SiTailwindcss } from 'react-icons/si'
 import GithubIcon from './assets/github.svg'
 import MailIcon from './assets/email.svg'
 import TgIcon from './assets/telegram.svg'
@@ -11,6 +11,10 @@ export const education = [
     {
         title: 'School №1534, Moscow',
         date: '9/2016 - 5/2022',
+    },
+    {
+        title: 'Moscow School of Programming (MSHP)',
+        date: '9/2019 - 5/2022'
     },
     {
         title: 'Foxford online school, Russia',
@@ -54,6 +58,10 @@ export const stack = [
             {
                 name: 'SQLAlchemy',
                 icon: <SiPostgresql />
+            },
+            {
+                name: 'Tailwind CSS',
+                icon: <SiTailwindcss />
             }
         ]
     },
@@ -141,5 +149,68 @@ export const hobbies = [
     {
         name: 'Drone photography',
         url: './images/drone.jpg'
+    }
+]
+
+export const projects = [
+    {
+        id: '1',
+        name: 'Diary',
+        year: '2022',
+        model: 'model.gltf',
+        gitUrl: 'https://github.com/ramz1t/Diary',
+        desc: 'School online diary service for students and teachers',
+        publicUrl: 'https://diary-fusm.onrender.com/',
+        stack: [
+            <SiPython color='#03045e' />, <SiFastapi />, <SiPostgresql />
+        ]
+    },
+    {
+        id: '2',
+        name: 'Diary TG Bot',
+        year: '2022',
+        model: 'model.gltf',
+        gitUrl: 'https://github.com/ramz1t/DiaryTelegramAssistant',
+        desc: 'Telegram bot for Diary HW and Marks notifications',
+        publicUrl: 'https://t.me/diary_service_bot',
+        stack: [
+            <SiPython />, <SiTelegram />, <SiPostgresql />
+        ]
+    },
+    {
+        id: '3',
+        name: 'WorX',
+        year: '2022',
+        model: 'model.gltf',
+        gitUrl: 'https://github.com/ramz1t/Worx',
+        desc: 'Github repo stats (poor version of Github repo Insights)',
+        publicUrl: 'https://worx.onrender.com/',
+        stack: [
+            <SiPython color='#03045e' />, <SiFastapi />, <SiPostgresql />
+        ]
+    },
+    {
+        id: '4',
+        name: 'CreditHelper',
+        year: '2022',
+        model: 'model.gltf',
+        gitUrl: 'https://github.com/ramz1t/CreditHelper_frontend',
+        desc: 'Service for credits comparison and managment',
+        publicUrl: 'https://creditshelper.ru/',
+        stack: [
+            <SiJavascript color='#03045e' />, <SiReact />, <SiPython />, <SiPostgresql />
+        ]
+    },
+    {
+        id: '5',
+        name: 'Personal page',
+        year: '2023',
+        model: 'model.gltf',
+        gitUrl: 'https://github.com/ramz1t/personal-page',
+        desc: 'My personal page, you are here right now :)',
+        publicUrl: 'https://ramz1.onrender.com/',
+        stack: [
+            <SiJavascript />, <SiReact />, <SiTailwindcss />
+        ]
     }
 ]

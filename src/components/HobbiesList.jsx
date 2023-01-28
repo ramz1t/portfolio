@@ -3,7 +3,7 @@ import { hobbies } from '../data'
 
 const HobbiesList = () => {
     return (
-        <div className='w-full'>
+        <div className='w-full h-full'>
             <h1 className="text-5xl pb-7 text-left">Hobbies</h1>
             <div className="flex gap-6 flex-wrap justify-around md:justify-start">
                 {

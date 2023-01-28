@@ -21,7 +21,7 @@ const NavButton = ({ text, blockId, init }) => {
     }, [])
 
     return (
-        <div onScroll={handleScroll} className='cursor-pointer text-2xl text-primary-900 flex items-center gap-2' onClick={() => document.getElementById(blockId).scrollIntoView({ behavior: 'smooth' })}>
+        <div onScroll={handleScroll} className='cursor-pointer text-2xl text-primary-900 flex items-center gap-2 text-center md:text-left' onClick={() => document.getElementById(blockId).scrollIntoView({ behavior: 'smooth' })}>
             {activeSection ? <BsCircleFill className='w-3 h-3' /> : ''}
             {text}
         </div>
