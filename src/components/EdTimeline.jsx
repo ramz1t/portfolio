@@ -9,4 +9,12 @@ const EdTimelineItem = ({ title, date }) => {
     )
 }
 
-export default EdTimelineItem
+const EdTimeline = ({ elList }) => {
+    return (
+        <>
+            {elList.map((ed, key) => <EdTimelineItem key={key} title={ed.title} date={ed.date} />)}
+        </>
+    )
+}
+
+export default EdTimeline

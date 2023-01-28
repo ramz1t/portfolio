@@ -15,9 +15,6 @@ const buttons = [
 const Navbar = () => {
     const [open, setOpen] = useState(false)
 
-    useEffect(() => {
-
-    }, [open])
     return (
         <nav className='w-full flex justify-center'>
             <div className='flex container mx-auto justify-between items-center p-5 z-20 fixed'>

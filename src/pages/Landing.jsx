@@ -52,7 +52,7 @@ const Landing = () => {
     return (
         <>
             <section id='landing' className='bg-slate-200'>
-                <div className="page-part !pt-20">
+                <div className="page-part">
                     <div className='flex flex-col gap-5 w-full'>
                         <h1 className='text-5xl text-primary-900 leading-tight'>Hi, my name is Timur<br />And I'm a software developer</h1>
                         <h2 className='text-xl text-primary-800'>I like making products, that are useful for people</h2>
