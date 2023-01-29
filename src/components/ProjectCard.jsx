@@ -55,7 +55,7 @@ const ProjectCard = ({ id, name, model, year, gitUrl, publicUrl, stack, desc }) 
             <div className='flex flex-col gap-4'>
                 <h2 className='text-2xl'>{name}</h2>
                 <h3 className='text-slate-500'>{year}</h3>
-                <div className='flex gap-3 flex-wrap'>
+                <div className='grid gap-3 grid-cols-4'>
                     {
                         stack.map((icon, key) =>
                             <div key={key} className='rounded-full border-2 border-primary-900 w-8 h-8 flex items-center justify-center'>
