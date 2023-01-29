@@ -1,54 +1,10 @@
 import React from 'react'
-import { useEffect } from 'react'
-import * as THREE from 'three'
-import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
-
-
+import { useState } from 'react'
 
 const Landing = () => {
-    useEffect(() => {
 
-        const scene = new THREE.Scene()
-        scene.background = new THREE.Color(0xFFFFFF)
-        const camera = new THREE.PerspectiveCamera(75, 180 / 176, 0.1, 1000)
-        camera.position.set(0, 1, 0)
-        const renderer = new THREE.WebGLRenderer({
-            canvas: document.querySelector(`#bg`)
-        })
-        renderer.setSize(180, 176)
-        const geo = new THREE.BoxGeometry(1, 1, 1)
-        const material = new THREE.MeshBasicMaterial({ color: 0x111111 })
-        const cube = new THREE.Mesh(geo, material)
-        scene.add(cube)
+    const [hover, setHover] = useState(false)
 
-        let pointLight = new THREE.PointLight(0xffffff)
-        scene.add(pointLight);
-        let lightHelper = new THREE.PointLightHelper(pointLight)
-        // scene.add(lightHelper)
-        pointLight.position.set(0, 10, 10)
-        const ambientLight = new THREE.AmbientLight(0xffffff)
-        scene.add(ambientLight)
-
-        // let safe
-        // const loader = new GLTFLoader()
-        // loader.load(`./models/${model}`, (gltf) => {
-        //     safe = gltf.scene
-        //     safe.position.set(0, 0, 0)
-        //     // scene.add(safe)
-        //     safe.scale.set(4, 4, 4)
-        //     safe.rotation.y = 300
-        // })
-
-        const animate = () => {
-            // if (safe && safe.rotation) {
-            //     safe.rotation.y += 0.001
-            // }
-            requestAnimationFrame(animate);
-            renderer.render(scene, camera);
-        }
-
-        animate()
-    }, [])
     return (
         <>
             <section id='landing' className='bg-slate-200'>
@@ -62,8 +18,8 @@ const Landing = () => {
                             Contact me
                         </button>
                     </div>
-                    <div className="h-100">
-                        <img src="./images/floppy.png" alt="timur ramazanov" className='h-full w-auto' />
+                    <div onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)} className="h-full flex items-center justify-center">
+                        <img src={!hover ? "./images/floppy.png" : './images/floppy_open.png'} alt="timur ramazanov" className='w-full md:w-1/2 lg:w-auto' />
                     </div>
 
                 </div>
