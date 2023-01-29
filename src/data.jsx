@@ -1,4 +1,4 @@
-import { SiJavascript, SiFastapi, SiPostgresql, SiReact, SiPython, SiGit, SiDocker, SiNotion, SiCplusplus, SiDjango, SiTelegram, SiTailwindcss } from 'react-icons/si'
+import { SiJavascript, SiFastapi, SiPostgresql, SiBlender, SiReact, SiPython, SiGit, SiDocker, SiNotion, SiCplusplus, SiDjango, SiTelegram, SiTailwindcss } from 'react-icons/si'
 import GithubIcon from './assets/github.svg'
 import MailIcon from './assets/email.svg'
 import TgIcon from './assets/telegram.svg'
@@ -79,6 +79,10 @@ export const stack = [
             {
                 name: 'Notion',
                 icon: <SiNotion />
+            },
+            {
+                name: 'CAD Editors',
+                icon: <SiBlender />
             }
         ]
     }
