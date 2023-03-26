@@ -112,7 +112,7 @@ export const aboutList = [
     },
     {
         title: 'Location:',
-        data: 'Moscow, Russia'
+        data: 'Malmö, Sweden'
     },
     {
         title: 'Languages:',
