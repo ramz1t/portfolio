@@ -1,4 +1,18 @@
-import { SiJavascript, SiFastapi, SiPostgresql, SiBlender, SiReact, SiPython, SiGit, SiDocker, SiNotion, SiCplusplus, SiDjango, SiTelegram, SiTailwindcss } from 'react-icons/si'
+import {
+    SiJavascript,
+    SiFastapi,
+    SiPostgresql,
+    SiBlender,
+    SiReact,
+    SiPython,
+    SiGit,
+    SiDocker,
+    SiNotion,
+    // SiCplusplus,
+    // SiDjango,
+    SiTelegram,
+    SiTailwindcss
+} from 'react-icons/si'
 import GithubIcon from './assets/github.svg'
 import MailIcon from './assets/email.svg'
 import TgIcon from './assets/telegram.svg'
@@ -38,10 +52,10 @@ export const stack = [
                 name: 'JS',
                 icon: <SiJavascript />
             },
-            {
-                name: 'C++',
-                icon: <SiCplusplus />
-            }
+            // {
+            //     name: 'C++',
+            //     icon: <SiCplusplus />
+            // }
         ]
     },
     {
@@ -81,7 +95,7 @@ export const stack = [
                 icon: <SiNotion />
             },
             {
-                name: 'CAD Editors',
+                name: '3D',
                 icon: <SiBlender />
             }
         ]
@@ -144,15 +158,18 @@ export const links = [
 export const hobbies = [
     {
         name: 'Skiing and hiking',
-        url: './images/skiing.jpg'
+        url: './images/skiing.jpg',
+        alt: 'photo of me skiing in kavkaz moutnains, person on front, danger sign behind'
     },
     {
         name: 'Coding',
-        url: './images/coding.jpg'
+        url: './images/coding.jpg',
+        alt: 'photo of a table with two monitors, ipad on front, code on the first monitor, spotify and cmd on the second monitor'
     },
     {
         name: 'Drone photography',
-        url: './images/drone.jpg'
+        url: './images/drone.jpg',
+        alt: 'photo of night Moscow shot from drone, 40 floor building in the center, roads with bright lights around'
     }
 ]
 
@@ -211,7 +228,7 @@ export const projects = [
         year: '2023',
         model: 'model.gltf',
         gitUrl: 'https://github.com/ramz1t/personal-page',
-        desc: 'My personal page, you are here right now :)',
+        desc: 'My developer personal portfolio, you are here right now :)',
         publicUrl: 'https://ramz1.onrender.com/',
         stack: [
             <SiJavascript />, <SiReact />, <SiTailwindcss />

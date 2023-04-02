@@ -4,7 +4,7 @@ import { aboutList } from '../data'
 const AboutForm = () => {
     return (
         <div className='w-full h-full'>
-            <h1 className='text-5xl pb-7'>About me</h1>
+            <h2 className='text-5xl pb-7'>About me</h2>
             <div className="flex flex-col gap-4 border-2 border-white p-5 rounded-2xl md:w-96">
                 {
                     aboutList.map((el, key) =>

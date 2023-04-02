@@ -51,26 +51,22 @@ const ProjectCard = ({ id, name, model, year, gitUrl, publicUrl, stack, desc }) 
     // }, [])
 
     return (
-        <div className='border-2 border-primary-900 rounded-2xl p-7 w-60 flex flex-col gap-4 justify-between'>
-            <div className='flex flex-col gap-4'>
-                <h2 className='text-2xl'>{name}</h2>
-                <h3 className='text-slate-500'>{year}</h3>
-                <div className='grid gap-3 grid-cols-4'>
-                    {
-                        stack.map((icon, key) =>
-                            <div key={key} className='rounded-full border-2 border-primary-900 w-8 h-8 flex items-center justify-center'>
-                                {icon}
-                            </div>
-                        )
-                    }
-                </div>
-                <p>{desc}</p>
-            </div>
+        <li className='border-2 border-primary-900 rounded-2xl p-7 w-60 flex flex-col gap-4 justify-between h-full'>
+            <h3 className='text-2xl'>{name}</h3>
+            <time className='text-slate-500'>{year}</time>
+            <ul className='grid gap-3 grid-cols-4'>
+                {stack.map((icon, key) =>
+                    <li key={key} className='rounded-full border-2 border-primary-900 w-8 h-8 flex items-center justify-center'>
+                        {icon}
+                    </li>
+                )}
+            </ul>
+            <p className='grow'>{desc}</p>
             <div className="flex justify-between items-center">
                 <a className='bg-primary-900 text-slate-50 py-2 px-5 rounded-full hover:scale-105 transition-all h-10' href={publicUrl} target='_blank'>Live demo</a>
                 <a className='border-2 rounded-full hover:scale-105 transition-all h-10 flex items-center justify-center w-10 border-primary-900' href={gitUrl} target='_blank'>{<TbBrandGithub />}</a>
             </div>
-        </div>
+        </li>
     )
 }
 

@@ -9,22 +9,56 @@ import { buttons } from '../data'
 const Navbar = () => {
     const [open, setOpen] = useState(false)
 
+    useEffect(() => {
+        const handleScroll = () => {
+            setOpen(false)
+        }
+        window.addEventListener('scroll', handleScroll)
+
+        return () => window.removeEventListener('scroll', handleScroll)
+    }, [])
+
     return (
-        <nav className='w-full flex justify-center'>
-            <div className='flex container mx-auto justify-between items-center p-5 z-20 fixed'>
-                <img src='./images/logo.png' className='text-2xl w-10 h-10 text-primary-900 cursor-pointer' onClick={() => { document.getElementById('landing').scrollIntoView({ behavior: 'smooth' }) }} />
-                <Hamburger distance='lg' rounded color="#03045e" toggled={open} toggle={setOpen} />
+        <div className='w-full flex justify-center'>
+            <div className='fixed z-20 w-full backdrop-blur-lg bg-white/[.8]'>
+                <div className='flex container mx-auto justify-between items-center p-5' id="logo-icon">
+                    <a href="#landing">
+                        <img src='/images/logo.png' className='text-2xl w-10 h-10 text-primary-900 cursor-pointer' alt="" />
+                    </a>
+                    <span className={`transition-all duration-300 mr-0 ${open && 'md:mr-96'}`}>
+                        <Hamburger
+                            duration={0.25}
+                            distance='lg'
+                            rounded
+                            color="#03045e"
+                            toggled={open}
+                            toggle={setOpen}
+                        />
+                    </span>
+                </div>
             </div>
-            <div className={`fixed h-screen w-screen md:w-96 lg:w-96 lg:p-10 p-5 bg-zinc-100 top-0 z-10
-            flex flex-col justify-evenly items-center lg:items-start transition-all duration-500
-            ${open ? 'right-0 ' : '-right-full md:-right-96 lg:-right-96'}`}>
-
-                {buttons.map((button, key) => <NavButton key={key} {...button} />)}
-
+            <nav className={`fixed h-screen w-screen md:w-96 lg:p-10 p-5 bg-zinc-100 top-0 z-50
+            flex flex-col justify-evenly items-center lg:items-start transition-all duration-300
+            ${open ? 'right-0 ' : '-right-full md:-right-96'}`}>
+                {window.innerWidth < 768 && <span className='absolute top-5 right-5'>
+                    <Hamburger
+                        duration={0.25}
+                        distance='lg'
+                        rounded
+                        color="#03045e"
+                        toggled={open}
+                        toggle={setOpen}
+                    />
+                </span>}
+                {buttons.map((button, key) => <NavButton
+                    onClick={() => null}
+                    key={key}
+                    {...button}
+                />)}
                 <hr className='h-[2px] bg-primary-800 w-full' />
                 <LinksList />
-            </div>
-        </nav>
+            </nav>
+        </div>
     )
 }
 
