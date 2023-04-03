@@ -24,7 +24,8 @@ body * {
 section {
     @apply min-h-screen w-full snap-start
 }
-
-html { 
-    scroll-behavior: smooth;
-}   
+@media (min-width: 768px) {
+    html { 
+        scroll-behavior: smooth;
+    }   
+}
