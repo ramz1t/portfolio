@@ -19,14 +19,6 @@ import TgIcon from './assets/telegram.svg'
 
 export const education = [
     {
-        title: 'School №2115, Moscow',
-        date: '9/2012 - 5/2016',
-    },
-    {
-        title: 'School №1534, Moscow',
-        date: '9/2016 - 5/2022',
-    },
-    {
         title: 'Moscow School of Programming (MSHP)',
         date: '9/2019 - 5/2022'
     },
