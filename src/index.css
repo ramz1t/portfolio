@@ -5,27 +5,27 @@
 @tailwind utilities;
 
 @font-face {
-    font-family: "Rowdies-Regular";
-    src: url("../fonts/Rowdies-Regular.ttf");
+    font-family: 'Rowdies-Regular';
+    src: url('../fonts/Rowdies-Regular.ttf');
 }
 
 body * {
-    @apply box-border
+    @apply box-border;
 }
 
 .page-part {
-    @apply container px-5 pt-[100px] pb-20 mx-auto min-h-screen 
+    @apply container px-5 pt-[100px] pb-20 mx-auto;
 }
 
 .dual-section {
-    @apply flex items-center lg:grid grid-cols-2 place-items-center flex-col 
+    @apply flex items-center lg:grid grid-cols-2 place-items-center flex-col;
 }
 
 section {
-    @apply min-h-screen w-full snap-start
+    @apply min-h-screen w-full snap-start flex items-center justify-center;
 }
 @media (min-width: 768px) {
-    html { 
+    html {
         scroll-behavior: smooth;
-    }   
+    }
 }

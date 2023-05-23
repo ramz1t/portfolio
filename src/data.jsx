@@ -11,7 +11,7 @@ import {
     // SiCplusplus,
     // SiDjango,
     SiTelegram,
-    SiTailwindcss
+    SiTailwindcss,
 } from 'react-icons/si'
 import GithubIcon from './assets/github.svg'
 import MailIcon from './assets/email.svg'
@@ -20,7 +20,7 @@ import TgIcon from './assets/telegram.svg'
 export const education = [
     {
         title: 'Moscow School of Programming (MSHP)',
-        date: '9/2019 - 5/2022'
+        date: '9/2019 - 5/2022',
     },
     {
         title: 'Foxford online school, Russia',
@@ -38,94 +38,96 @@ export const stack = [
         group: [
             {
                 name: 'Python',
-                icon: <SiPython />
+                icon: <SiPython />,
             },
             {
                 name: 'JS',
-                icon: <SiJavascript />
+                icon: <SiJavascript />,
             },
             // {
             //     name: 'C++',
             //     icon: <SiCplusplus />
             // }
-        ]
+        ],
     },
     {
         title: 'Frameworks',
         group: [
             {
                 name: 'React',
-                icon: <SiReact />
+                icon: <SiReact />,
             },
             {
                 name: 'Fastapi',
-                icon: <SiFastapi />
+                icon: <SiFastapi />,
             },
             {
                 name: 'SQLAlchemy',
-                icon: <SiPostgresql />
+                icon: <SiPostgresql />,
             },
             {
                 name: 'Tailwind CSS',
-                icon: <SiTailwindcss />
-            }
-        ]
+                icon: <SiTailwindcss />,
+            },
+        ],
     },
     {
         title: 'Other',
         group: [
             {
                 name: 'Git',
-                icon: <SiGit />
+                icon: <SiGit />,
             },
             {
                 name: 'Docker',
-                icon: <SiDocker />
+                icon: <SiDocker />,
             },
             {
                 name: 'Notion',
-                icon: <SiNotion />
+                icon: <SiNotion />,
             },
             {
                 name: '3D',
-                icon: <SiBlender />
-            }
-        ]
-    }
+                icon: <SiBlender />,
+            },
+        ],
+    },
 ]
 
 export const buttons = [
     { text: 'Introduction', blockId: 'landing', init: true },
     { text: 'Education and Hobbies', blockId: 'ed_and_hobbies' },
     { text: 'Projects', blockId: 'projects' },
-    { text: 'Contacts', blockId: 'contacts' }
+    { text: 'Contacts', blockId: 'contacts' },
 ]
 
-const birthdate = new Date('2005-06-25');
-const today = new Date();
-const ageInMilliseconds = today - birthdate;
-const ageInYears = ageInMilliseconds / 31557600000;
-const age = Math.floor(ageInYears);
+const birthdate = new Date('2005-06-25')
+const today = new Date()
+const ageInMilliseconds = today - birthdate
+const ageInYears = ageInMilliseconds / 31557600000
+const age = Math.floor(ageInYears)
 
 export const aboutList = [
     {
         title: 'Full name:',
-        data: 'Ramazanov Timur'
+        data: 'Ramazanov Timur',
     },
     {
         title: 'Age:',
-        data: age
+        data: age,
     },
     {
         title: 'Location:',
-        data: 'Malmö, Sweden'
+        data: 'Malmö, Sweden',
     },
     {
         title: 'Languages:',
-        data: <div>
-            <p>🇷🇺 Russian (C2)</p>
-            <p>🇬🇧 English (C1)</p>
-        </div>
+        data: (
+            <div>
+                <p>🇷🇺 Russian (C2)</p>
+                <p>🇬🇧 English (C1)</p>
+            </div>
+        ),
     },
 ]
 
@@ -133,36 +135,36 @@ export const links = [
     {
         href: 'https://github.com/ramz1t',
         icon: GithubIcon,
-        alt: 'github profile'
+        alt: 'github profile',
     },
     {
         href: 'https://t.me/ramz1q',
         icon: TgIcon,
-        alt: 'telegram link'
+        alt: 'telegram link',
     },
     {
         href: 'mailto:timurram007@gmail.com',
         icon: MailIcon,
-        alt: 'email adress'
-    }
+        alt: 'email adress',
+    },
 ]
 
 export const hobbies = [
     {
         name: 'Skiing and hiking',
         url: './images/skiing.jpg',
-        alt: 'photo of me skiing in kavkaz moutnains, person on front, danger sign behind'
+        alt: 'photo of me skiing in kavkaz moutnains, person on front, danger sign behind',
     },
     {
         name: 'Coding',
         url: './images/coding.jpg',
-        alt: 'photo of a table with two monitors, ipad on front, code on the first monitor, spotify and cmd on the second monitor'
+        alt: 'photo of a table with two monitors, ipad on front, code on the first monitor, spotify and cmd on the second monitor',
     },
     {
         name: 'Drone photography',
         url: './images/drone.jpg',
-        alt: 'photo of night Moscow shot from drone, 40 floor building in the center, roads with bright lights around'
-    }
+        alt: 'photo of night Moscow shot from drone, 40 floor building in the center, roads with bright lights around',
+    },
 ]
 
 export const projects = [
@@ -174,9 +176,7 @@ export const projects = [
         gitUrl: 'https://github.com/ramz1t/Diary',
         desc: 'School online diary service for students and teachers',
         publicUrl: 'https://diary-fusm.onrender.com/',
-        stack: [
-            <SiPython color='#03045e' />, <SiFastapi />, <SiPostgresql />
-        ]
+        stack: [<SiPython color="#03045e" />, <SiFastapi />, <SiPostgresql />],
     },
     {
         id: '2',
@@ -186,9 +186,7 @@ export const projects = [
         gitUrl: 'https://github.com/ramz1t/DiaryTelegramAssistant',
         desc: 'Telegram bot for Diary HW and Marks notifications',
         publicUrl: 'https://t.me/diary_service_bot',
-        stack: [
-            <SiPython />, <SiTelegram />, <SiPostgresql />
-        ]
+        stack: [<SiPython />, <SiTelegram />, <SiPostgresql />],
     },
     {
         id: '3',
@@ -198,9 +196,7 @@ export const projects = [
         gitUrl: 'https://github.com/ramz1t/Worx',
         desc: 'Github repo stats (poor version of Github repo Insights)',
         publicUrl: 'https://worx.onrender.com/',
-        stack: [
-            <SiPython color='#03045e' />, <SiFastapi />, <SiPostgresql />
-        ]
+        stack: [<SiPython color="#03045e" />, <SiFastapi />, <SiPostgresql />],
     },
     {
         id: '4',
@@ -211,8 +207,11 @@ export const projects = [
         desc: 'Service for credits comparison and managment',
         publicUrl: 'https://creditshelper.ru/',
         stack: [
-            <SiJavascript color='#03045e' />, <SiReact />, <SiPython />, <SiPostgresql />
-        ]
+            <SiJavascript color="#03045e" />,
+            <SiReact />,
+            <SiPython />,
+            <SiPostgresql />,
+        ],
     },
     {
         id: '5',
@@ -222,8 +221,6 @@ export const projects = [
         gitUrl: 'https://github.com/ramz1t/personal-page',
         desc: 'My developer personal portfolio, you are here right now :)',
         publicUrl: 'https://ramz1.onrender.com/',
-        stack: [
-            <SiJavascript />, <SiReact />, <SiTailwindcss />
-        ]
-    }
+        stack: [<SiJavascript />, <SiReact />, <SiTailwindcss />],
+    },
 ]

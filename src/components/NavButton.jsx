@@ -3,7 +3,6 @@ import { useEffect, useState } from 'react'
 import { BsCircleFill } from 'react-icons/bs'
 
 const NavButton = ({ text, blockId, init, onClick }) => {
-
     const [activeSection, setActiveSection] = useState(init)
 
     useEffect(() => {
@@ -23,11 +22,11 @@ const NavButton = ({ text, blockId, init, onClick }) => {
 
     return (
         <a
-            className='cursor-pointer text-2xl text-primary-900 flex items-center gap-2 text-center md:text-left'
+            className="cursor-pointer text-2xl text-primary-900 flex items-center gap-2 text-center md:text-left"
             onClick={onClick}
             href={`#${blockId}`}
         >
-            {activeSection && <BsCircleFill className='w-3 h-3' />}
+            {activeSection && <BsCircleFill className="w-3 h-3" />}
             {text}
         </a>
     )
