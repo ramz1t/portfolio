@@ -49,8 +49,8 @@ const Navbar = () => {
                 </div>
             </div>
             <nav
-                className={`fixed h-screen w-screen md:w-96 lg:p-10 p-5 bg-zinc-100 top-0 z-50
-            flex flex-col justify-evenly items-center lg:items-start transition-all duration-300
+                className={`fixed h-screen w-screen md:w-96 md:p-10 p-5 bg-zinc-100 top-0 z-50
+            flex flex-col justify-evenly items-center md:items-start transition-all duration-300
             ${open ? 'right-0 ' : '-right-full md:-right-96'}`}
             >
                 {window.innerWidth < 768 && (

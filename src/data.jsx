@@ -10,6 +10,7 @@ import {
     SiNotion,
     // SiCplusplus,
     // SiDjango,
+    SiNginx,
     SiTelegram,
     SiTailwindcss,
 } from 'react-icons/si'
@@ -44,10 +45,6 @@ export const stack = [
                 name: 'JS',
                 icon: <SiJavascript />,
             },
-            // {
-            //     name: 'C++',
-            //     icon: <SiCplusplus />
-            // }
         ],
     },
     {
@@ -87,8 +84,8 @@ export const stack = [
                 icon: <SiNotion />,
             },
             {
-                name: '3D',
-                icon: <SiBlender />,
+                name: 'Nginx',
+                icon: <SiNginx />,
             },
         ],
     },
@@ -123,10 +120,11 @@ export const aboutList = [
     {
         title: 'Languages:',
         data: (
-            <div>
-                <p>🇷🇺 Russian (C2)</p>
-                <p>🇬🇧 English (C1)</p>
-            </div>
+            <ul>
+                <li>🇸🇪 Swedish (started)</li>
+                <li>🇷🇺 Russian (C2)</li>
+                <li>🇬🇧 English (C1)</li>
+            </ul>
         ),
     },
 ]
@@ -177,26 +175,7 @@ export const projects = [
         desc: 'School online diary service for students and teachers',
         publicUrl: 'https://diary-fusm.onrender.com/',
         stack: [<SiPython color="#03045e" />, <SiFastapi />, <SiPostgresql />],
-    },
-    {
-        id: '2',
-        name: 'Diary TG Bot',
-        year: '2022',
-        model: 'model.gltf',
-        gitUrl: 'https://github.com/ramz1t/DiaryTelegramAssistant',
-        desc: 'Telegram bot for Diary HW and Marks notifications',
-        publicUrl: 'https://t.me/diary_service_bot',
-        stack: [<SiPython />, <SiTelegram />, <SiPostgresql />],
-    },
-    {
-        id: '3',
-        name: 'WorX',
-        year: '2022',
-        model: 'model.gltf',
-        gitUrl: 'https://github.com/ramz1t/Worx',
-        desc: 'Github repo stats (poor version of Github repo Insights)',
-        publicUrl: 'https://worx.onrender.com/',
-        stack: [<SiPython color="#03045e" />, <SiFastapi />, <SiPostgresql />],
+        image: '/images/projects/diary.png',
     },
     {
         id: '4',
@@ -212,6 +191,7 @@ export const projects = [
             <SiPython />,
             <SiPostgresql />,
         ],
+        image: '/images/projects/credit.png',
     },
     {
         id: '5',
@@ -219,8 +199,31 @@ export const projects = [
         year: '2023',
         model: 'model.gltf',
         gitUrl: 'https://github.com/ramz1t/personal-page',
-        desc: 'My developer personal portfolio, you are here right now :)',
+        desc: 'My developer personal portfolio, you are here now :)',
         publicUrl: 'https://ramz1.onrender.com/',
         stack: [<SiJavascript />, <SiReact />, <SiTailwindcss />],
+        image: '/images/projects/ramz1.png',
+    },
+    {
+        id: '6',
+        name: 'Grocket',
+        year: '2023',
+        model: 'model.gltf',
+        gitUrl: 'https://github.com/ramz1t/personal-page',
+        desc: 'International online marketplace for secondhand items',
+        publicUrl: 'http://opns-st-1.aboard.ru:34080/',
+        stack: [<SiReact />, <SiTailwindcss />, <SiDocker />, <SiNginx />],
+        image: '/images/projects/grocket.png',
+    },
+    {
+        id: '6',
+        name: 'Ph. portfolio',
+        year: '2023',
+        model: 'model.gltf',
+        gitUrl: 'https://github.com/ramz1t/simon-kuleshov',
+        desc: 'Photographer portfolio for Simon Kuleshov',
+        publicUrl: 'https://simon-kuleshov.onrender.com/',
+        stack: [<SiJavascript />, <SiReact />, <SiTailwindcss />],
+        image: '/images/projects/simon.png',
     },
 ]
