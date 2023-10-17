@@ -51,7 +51,7 @@ const Contact = () => {
                     </p>
                 )}
                 <form
-                    className="flex flex-col gap-3 border-2 border-primary-900 p-5 md:p-10 rounded-3xl w-full"
+                    className="flex flex-col gap-1 border-2 border-primary-900 p-5 md:p-10 rounded-3xl w-full"
                     onSubmit={handleSubmit}
                 >
                     <label className="text-2xl" htmlFor="name">
@@ -63,7 +63,7 @@ const Contact = () => {
                         type="text"
                         id="name"
                     />
-                    <label className="text-2xl" htmlFor="subject">
+                    <label className="text-2xl mt-3" htmlFor="subject">
                         Subject:
                     </label>
                     <input
@@ -72,7 +72,7 @@ const Contact = () => {
                         type="text"
                         id="subject"
                     />
-                    <label className="text-2xl" htmlFor="message">
+                    <label className="text-2xl mt-3" htmlFor="message">
                         Message:
                     </label>
                     <textarea

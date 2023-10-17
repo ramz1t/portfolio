@@ -13,6 +13,8 @@ import {
     SiNginx,
     SiTelegram,
     SiTailwindcss,
+    SiSwift,
+    SiIos,
 } from 'react-icons/si'
 import GithubIcon from './assets/github.svg'
 import MailIcon from './assets/email.svg'
@@ -45,6 +47,11 @@ export const stack = [
                 name: 'JS',
                 icon: <SiJavascript />,
             },
+            ,
+            {
+                name: 'Swift',
+                icon: <SiSwift />,
+            },
         ],
     },
     {
@@ -65,6 +72,10 @@ export const stack = [
             {
                 name: 'Tailwind CSS',
                 icon: <SiTailwindcss />,
+            },
+            {
+                name: 'SwiftUI',
+                icon: <SiSwift />,
             },
         ],
     },
@@ -106,24 +117,27 @@ const age = Math.floor(ageInYears)
 
 export const aboutList = [
     {
-        title: 'Full name:',
+        title: 'Full name',
         data: 'Ramazanov Timur',
     },
     {
-        title: 'Age:',
+        title: 'Age',
         data: age,
     },
     {
-        title: 'Location:',
+        title: 'Location',
         data: 'Malmö, Sweden',
     },
     {
-        title: 'Languages:',
+        title: 'Languages',
         data: (
             <ul>
-                <li>🇸🇪 Swedish (started)</li>
-                <li>🇷🇺 Russian (C2)</li>
-                <li>🇬🇧 English (C1)</li>
+                <li className="hidden md:block">🇸🇪 Swedish (A2)</li>
+                <li className="block md:hidden">🇸🇪 SE (A2)</li>
+                <li className="hidden md:block">🇷🇺 Russian (Native)</li>
+                <li className="block md:hidden">🇷🇺 RU (Native)</li>
+                <li className="hidden md:block">🇬🇧 English (C1)</li>
+                <li className="block md:hidden">🇬🇧 EN (C1)</li>
             </ul>
         ),
     },
@@ -211,7 +225,7 @@ export const projects = [
         model: 'model.gltf',
         gitUrl: 'https://github.com/ramz1t/personal-page',
         desc: 'International online marketplace for secondhand items',
-        publicUrl: 'http://opns-st-1.aboard.ru:34080/',
+        publicUrl: 'https://timur.aboard.ru',
         stack: [<SiReact />, <SiTailwindcss />, <SiDocker />, <SiNginx />],
         image: '/images/projects/grocket.png',
     },
@@ -225,5 +239,17 @@ export const projects = [
         publicUrl: 'https://simon-kuleshov.onrender.com/',
         stack: [<SiJavascript />, <SiReact />, <SiTailwindcss />],
         image: '/images/projects/simon.png',
+    },
+    ,
+    {
+        id: '6',
+        name: 'Tic Tac Toe',
+        year: '2023',
+        model: 'model.gltf',
+        gitUrl: 'https://github.com/ramz1t/tictactoe',
+        desc: 'Tic Tac Toe game made with Swift and SwiftUI',
+        publicUrl: 'https://www.apple.com/app-store/',
+        stack: [<SiSwift />, <SiIos />],
+        image: '/images/projects/tictactoe.png',
     },
 ]
