@@ -223,7 +223,7 @@ export const projects = [
         name: 'Grocket',
         year: '2023',
         model: 'model.gltf',
-        gitUrl: 'https://github.com/ramz1t/personal-page',
+        gitUrl: 'https://github.com/alexzawadsky/Grocket',
         desc: 'International online marketplace for secondhand items',
         publicUrl: 'https://timur.aboard.ru',
         stack: [<SiReact />, <SiTailwindcss />, <SiDocker />, <SiNginx />],
