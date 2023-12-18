@@ -198,7 +198,7 @@ export const projects = [
         model: 'model.gltf',
         gitUrl: 'https://github.com/ramz1t/CreditHelper_frontend',
         desc: 'Service for credits comparison and managment',
-        publicUrl: 'https://creditshelper.ru/',
+        publicUrl: 'http://timur.aboard.ru:34082',
         stack: [
             <SiJavascript color="#03045e" />,
             <SiReact />,
