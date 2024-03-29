@@ -240,7 +240,6 @@ export const projects = [
         stack: [<SiJavascript />, <SiReact />, <SiTailwindcss />],
         image: '/images/projects/simon.png',
     },
-    ,
     {
         id: '6',
         name: 'Tic Tac Toe',
@@ -251,5 +250,16 @@ export const projects = [
         publicUrl: 'https://www.apple.com/app-store/',
         stack: [<SiSwift />, <SiIos />],
         image: '/images/projects/tictactoe.png',
+    },
+    {
+        id: '6',
+        name: 'Video editor portfolio',
+        year: '2024',
+        model: 'model.gltf',
+        gitUrl: 'https://github.com/ramz1t/AntonMartynov',
+        desc: 'Video editor portfolio for Anton Martynov',
+        publicUrl: 'https://martynov.onrender.com/',
+        stack: [<SiJavascript />, <SiReact />, <SiTailwindcss />],
+        image: '/images/projects/anton.png',
     },
 ]
