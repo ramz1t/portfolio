@@ -30,6 +30,10 @@ export const education = [
         date: '9/2022 - 5/2023',
     },
     {
+        title: 'Computer Science BS, Kristianstad University, Sweden',
+        date: '9/2024 -',
+    },
+    {
         title: 'To be continiued...',
         date: '',
     },
