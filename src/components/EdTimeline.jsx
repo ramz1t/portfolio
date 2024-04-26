@@ -3,11 +3,21 @@ import { education } from '../data'
 
 const EdTimelineItem = ({ title, date }) => {
     return (
-        <li className="pb-10 last:pb-0 relative">
-            <h3 className='text-3xl pb-3 list-item before:content-["●"] before:absolute before:-left-[27px] before:-top-2 before:scale-150'>
-                {title}
-            </h3>
-            <time className="text-sm text-slate-400">{date}</time>
+        <li className="relative mb-1.5">
+            <div className="flex gap-3">
+                <div className='flex flex-col items-center'>
+                    <p className='text-5xl leading-[0.5]'>●</p>
+                    <div className='bg-white w-1 h-full rounded-b-full'></div>
+                </div>
+                <div className='pb-9'>
+                    <h3
+                        className='text-3xl pb-1.5'
+                    >
+                        {title}
+                    </h3>
+                    <time className="text-sm text-slate-400">{date}</time>
+                </div>
+            </div>
         </li>
     )
 }
@@ -15,14 +25,12 @@ const EdTimelineItem = ({ title, date }) => {
 const EdTimeline = () => {
     return (
         <div className="w-full h-full">
-            <h2 className="text-5xl pb-14">Education</h2>
-            <div className="ml-1 pl-4 border-l-2 border-white">
-                <ul className="-translate-y-5">
+            <h2 className="text-5xl pb-7">Education</h2>
+                <ul>
                     {education.map((ed, key) => (
                         <EdTimelineItem key={key} {...ed} />
                     ))}
                 </ul>
-            </div>
         </div>
     )
 }

@@ -2,6 +2,7 @@ import React from 'react'
 import { useRef, useState } from 'react'
 import LinksList from '../components/LinksList'
 import axios from 'axios'
+import Twemoji from "../components/Twemoji.jsx";
 
 const Contact = () => {
     const nameRef = useRef()
@@ -14,11 +15,12 @@ const Contact = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
+        setFormState('')
         const name = nameRef.current.value
         const subject = subjectRef.current.value
         const message = messageRef.current.value
         const text = `⚠️ New message ⚠️%0A%0A👤  *${name}*%0A🏷️  *${subject}*%0A📑  ${message}`
-        if (name != '' && subject != '' && message != '') {
+        if (name !== '' && subject !== '' && message !== '') {
             axios
                 .post(
                     `https://api.telegram.org/bot${botApiKey}/sendMessage?chat_id=${chatId}&text=${text}&parse_mode=markdown`
@@ -37,17 +39,17 @@ const Contact = () => {
     return (
         <section id="contacts" className="bg-slate-300 text-primary-900">
             <div className="w-full md:w-2/3 lg:w-1/2  page-part">
-                <h1 className="text-4xl md:text-5xl text-left mb-5">
-                    Contact me 👋🏻
+                <h1 className="text-4xl md:text-5xl text-left mb-5 flex gap-5">
+                    Contact me <Twemoji  emoji='👋🏻' width={42}/>
                 </h1>
                 {formState === 'sent' && (
                     <p className="bg-emerald-400 text-emerald-900 border-emerald-900 border-2 py-5 px-7 text-lg rounded-3xl text-center mb-5">
-                        Sent succesfully
+                        Sent successfully
                     </p>
                 )}
                 {formState === 'error' && (
                     <p className="bg-rose-400 text-rose-900 border-rose-900 border-2 py-5 px-7 text-lg rounded-3xl mb-5 text-center">
-                        Error occured
+                        Error occurred
                     </p>
                 )}
                 <form
@@ -59,7 +61,7 @@ const Contact = () => {
                     </label>
                     <input
                         ref={nameRef}
-                        className="h-8 px-4 py-5 outline-offset-0 rounded-md focus:outline-2  focus:outline-primary-900"
+                        className="h-8 px-4 py-5 outline-offset-0 focus:outline-none rounded-md focus:outline-2 focus:outline-primary-900"
                         type="text"
                         id="name"
                     />
@@ -68,7 +70,7 @@ const Contact = () => {
                     </label>
                     <input
                         ref={subjectRef}
-                        className="h-8 px-4 py-5 rounded-md"
+                        className="h-8 px-4 py-5 outline-offset-0 focus:outline-none rounded-md focus:outline-2  focus:outline-primary-900"
                         type="text"
                         id="subject"
                     />
@@ -77,12 +79,12 @@ const Contact = () => {
                     </label>
                     <textarea
                         ref={messageRef}
-                        className="h-24 px-4 py-5 rounded-md"
+                        className="min-h-[6rem] px-4 py-5 outline-offset-0 focus:outline-none rounded-md focus:outline-2  focus:outline-primary-900"
                         id="message"
                     />
                     <div className="flex flex-col-reverse md:flex-row justify-between items-center pt-3 md:pt-7 gap-5 md:gap-9">
                         <LinksList className="md:w-1/2 md:!justify-start gap-5" />
-                        <button className="bg-primary-900 text-slate-300 py-3 rounded-lg hover:scale-105 w-full md:w-fit px-10 md:ml-10 transition-all">
+                        <button className="bg-primary-900 text-slate-300 py-3 rounded-lg hover:scale-105 w-full md:w-fit px-10 md:ml-10 transition-all" type='submit'>
                             Send
                         </button>
                     </div>

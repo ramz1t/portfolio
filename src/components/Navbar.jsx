@@ -10,16 +10,23 @@ const Navbar = () => {
     const [open, setOpen] = useState(false)
 
     useEffect(() => {
-        const handleScroll = () => {
-            setOpen(false)
-        }
+        const handleScroll = () => setOpen(false)
         window.addEventListener('scroll', handleScroll)
 
-        return () => window.removeEventListener('scroll', handleScroll)
+        const handleClickOutside = (e) => {
+            if (!e.target.closest('.navbar-area')) setOpen(false)
+        }
+        document.addEventListener('click', handleClickOutside)
+        document.addEventListener('scroll', handleScroll)
+
+        return () => {
+            document.removeEventListener('click', handleClickOutside)
+            document.removeEventListener('scroll', handleScroll)
+        }
     }, [])
 
     return (
-        <div className="w-full flex justify-center">
+        <div className="w-full flex justify-center navbar-area">
             <div className="fixed z-20 w-full backdrop-blur-lg bg-white/[.8]">
                 <div
                     className="flex container mx-auto justify-between items-center p-5"

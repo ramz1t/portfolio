@@ -68,10 +68,10 @@ const ProjectCard = ({
             >
                 <img src={image} className="" />
             </a>
-            <div className="flex flex-col gap-4 justify-between h-full max-h-fit">
+            <div className="flex flex-col gap-2 justify-between h-full max-h-fit">
                 <h3 className="text-2xl">{name}</h3>
                 <time className="text-slate-500">{year}</time>
-                <ul className="flex md:grid gap-7 md:flex-3 md:grid-cols-4">
+                <ul className="flex md:grid gap-4 xl:gap-3 md:flex-3 md:grid-cols-4">
                     {stack.map((icon, key) => (
                         <li
                             key={key}
@@ -81,21 +81,24 @@ const ProjectCard = ({
                         </li>
                     ))}
                 </ul>
-                <p className="grow">{desc}</p>
+                <p className="grow pt-2">{desc}</p>
                 <div className="flex justify-between items-center">
                     <a
-                        className="bg-primary-900 text-slate-50 py-2 px-5 rounded-full hover:scale-105 transition-all h-10"
+                        className="bg-primary-900 text-slate-50 py-2 px-4 rounded-full hover:scale-105 transition-all h-10"
                         href={publicUrl}
                         target="_blank"
                     >
                         Live demo
                     </a>
                     <a
-                        className="border-2 rounded-full hover:scale-105 transition-all h-10 flex items-center justify-center w-10 border-primary-900"
+                        className="border-2 rounded-full hover:scale-105 transition-all h-10 flex items-center justify-center md:w-10 border-primary-900 gap-3 max-md:py-2 max-md:px-4"
                         href={gitUrl}
                         target="_blank"
                     >
                         {<TbBrandGithub />}
+                        <p className='md:hidden'>
+                            GitHub
+                        </p>
                     </a>
                 </div>
             </div>
