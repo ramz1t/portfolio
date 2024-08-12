@@ -1,5 +1,6 @@
 import {
     SiJavascript,
+    SiTypescript,
     SiFastapi,
     SiPostgresql,
     SiBlender,
@@ -19,7 +20,7 @@ import {
 import GithubIcon from './assets/github.svg'
 import MailIcon from './assets/email.svg'
 import TgIcon from './assets/telegram.svg'
-import Twemoji from "./components/Twemoji.jsx";
+import Twemoji from './components/Twemoji.jsx'
 
 export const education = [
     {
@@ -51,6 +52,10 @@ export const stack = [
             {
                 name: 'JS',
                 icon: <SiJavascript />,
+            },
+            {
+                name: 'TS',
+                icon: <SiTypescript />,
             },
             {
                 name: 'Swift',
@@ -136,12 +141,30 @@ export const aboutList = [
         title: 'Languages',
         data: (
             <ul>
-                <li className="hidden md:flex gap-3"><Twemoji emoji='🇸🇪' />Swedish (A2)</li>
-                <li className="flex md:hidden gap-3"><Twemoji emoji='🇸🇪' />SE (A2)</li>
-                <li className="hidden md:flex gap-3"><Twemoji emoji='🇷🇺' />Russian (Native)</li>
-                <li className="flex md:hidden gap-3"><Twemoji emoji='🇷🇺' />RU (Native)</li>
-                <li className="hidden md:flex gap-3"><Twemoji emoji='🇬🇧' />English (C1)</li>
-                <li className="flex md:hidden gap-3"><Twemoji emoji='🇬🇧' />EN (C1)</li>
+                <li className="hidden md:flex gap-3">
+                    <Twemoji emoji="🇸🇪" />
+                    Swedish (A2)
+                </li>
+                <li className="flex md:hidden gap-3">
+                    <Twemoji emoji="🇸🇪" />
+                    SE (A2)
+                </li>
+                <li className="hidden md:flex gap-3">
+                    <Twemoji emoji="🇷🇺" />
+                    Russian (Native)
+                </li>
+                <li className="flex md:hidden gap-3">
+                    <Twemoji emoji="🇷🇺" />
+                    RU (Native)
+                </li>
+                <li className="hidden md:flex gap-3">
+                    <Twemoji emoji="🇬🇧" />
+                    English (C1)
+                </li>
+                <li className="flex md:hidden gap-3">
+                    <Twemoji emoji="🇬🇧" />
+                    EN (C1)
+                </li>
             </ul>
         ),
     },
