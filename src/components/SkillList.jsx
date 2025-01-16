@@ -14,7 +14,10 @@ const SkillList = () => {
                         <ul className="flex flex-wrap gap-3 ">
                             {el.group.map((el, key) => (
                                 <li
-                                    className="flex items-center gap-5 border-2 border-white rounded-full py-3 px-5 w-fit"
+                                    className="flex items-center gap-5 border-2 border-white rounded-full py-3 px-5 w-fit hover:scale-105 hover:cursor-default transition-all duration-100"
+                                    style={{
+                                        boxShadow: `0px 0px 20px rgba(255, 255, 255, 0.3)`,
+                                    }}
                                     key={key}
                                 >
                                     {el.icon}
@@ -28,5 +31,6 @@ const SkillList = () => {
         </div>
     )
 }
+
 
 export default SkillList

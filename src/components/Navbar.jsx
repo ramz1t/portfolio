@@ -1,10 +1,11 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useRef } from 'react'
 import { useState } from 'react'
 import NavButton from './NavButton'
 import LinksList from './LinksList'
 import Hamburger from 'hamburger-react'
 import { buttons } from '../data'
 import logo from '../assets/logo.png'
+import { navigate } from '../App.jsx'
 
 const Navbar = () => {
     const [open, setOpen] = useState(false)
@@ -32,7 +33,7 @@ const Navbar = () => {
                     className="flex container mx-auto justify-between items-center p-5"
                     id="logo-icon"
                 >
-                    <a href="#landing">
+                    <a onClick={() => navigate("landing")}>
                         <img
                             src={logo}
                             className="text-2xl w-10 h-10 text-primary-900 cursor-pointer"
@@ -60,18 +61,16 @@ const Navbar = () => {
             flex flex-col justify-evenly items-center md:items-start transition-all duration-300
             ${open ? 'right-0 ' : '-right-full md:-right-96'}`}
             >
-                {window.innerWidth < 768 && (
-                    <span className="absolute top-5 right-5">
-                        <Hamburger
-                            duration={0.25}
-                            distance="lg"
-                            rounded
-                            color="#03045e"
-                            toggled={open}
-                            toggle={setOpen}
-                        />
-                    </span>
-                )}
+                <span className="absolute top-5 right-5 md:hidden">
+                    <Hamburger
+                        duration={0.25}
+                        distance="lg"
+                        rounded
+                        color="#03045e"
+                        toggled={open}
+                        toggle={setOpen}
+                    />
+                </span>
                 {buttons.map((button, key) => (
                     <NavButton onClick={() => null} key={key} {...button} />
                 ))}

@@ -9,9 +9,12 @@ const HobbiesList = () => {
                 {hobbies.map((el, key) => (
                     <li className="flex flex-col gap-3" key={key}>
                         <img
-                            className="w-full border-2 rounded-2xl"
+                            className="w-full border-2 rounded-2xl hover:scale-105 transition-all duration-100"
                             src={el.url}
                             alt={el?.alt}
+                            style={{
+                                boxShadow: `0px 0px 20px rgba(255, 255, 255, 0.3)`,
+                            }}
                         />
                         <h3 className="text-2xl pl-3">{el.name}</h3>
                     </li>

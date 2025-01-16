@@ -83,23 +83,25 @@ const ProjectCard = ({
                 </ul>
                 <p className="grow pt-2">{desc}</p>
                 <div className="flex justify-between items-center">
-                    <a
-                        className="bg-primary-900 text-slate-50 py-2 px-4 rounded-full hover:scale-105 transition-all h-10"
-                        href={publicUrl}
-                        target="_blank"
-                    >
-                        Live demo
-                    </a>
-                    <a
-                        className="border-2 rounded-full hover:scale-105 transition-all h-10 flex items-center justify-center md:w-10 border-primary-900 gap-3 max-md:py-2 max-md:px-4"
-                        href={gitUrl}
-                        target="_blank"
-                    >
-                        {<TbBrandGithub />}
-                        <p className='md:hidden'>
-                            GitHub
-                        </p>
-                    </a>
+                    {publicUrl && (
+                        <a
+                            className="bg-primary-900 text-slate-50 py-2 px-4 rounded-full hover:scale-105 transition-all h-10"
+                            href={publicUrl}
+                            target="_blank"
+                        >
+                            Live demo
+                        </a>
+                    )}
+                    {gitUrl && (
+                        <a
+                            className="border-2 rounded-full hover:scale-105 transition-all h-10 min-w-[40px] px-4 flex items-center justify-center border-primary-900 gap-3 max-md:py-2 max-md:px-4"
+                            href={gitUrl}
+                            target="_blank"
+                        >
+                            {<TbBrandGithub />}
+                            <p className={publicUrl && 'md:hidden'}>GitHub</p>
+                        </a>
+                    )}
                 </div>
             </div>
         </li>

@@ -26,7 +26,7 @@ const EdTimeline = () => {
     return (
         <div className="w-full h-full">
             <h2 className="text-5xl pb-7">Education</h2>
-                <ul>
+                <ul className='flex flex-col-reverse'>
                     {education.map((ed, key) => (
                         <EdTimelineItem key={key} {...ed} />
                     ))}

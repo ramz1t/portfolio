@@ -25,19 +25,15 @@ import Twemoji from './components/Twemoji.jsx'
 export const education = [
     {
         title: 'Moscow School of Programming (MSHP)',
-        date: '9/2019 - 5/2022',
+        date: 'Sept 2019 - May 2022',
     },
     {
         title: 'Foxford online school, Russia',
-        date: '9/2022 - 5/2023',
+        date: 'Sept 2022 - May 2023',
     },
     {
         title: 'Computer Science BS, Kristianstad University, Sweden',
-        date: '9/2024 -',
-    },
-    {
-        title: 'To be continiued...',
-        date: '',
+        date: 'Sept 2024 - Now',
     },
 ]
 
@@ -214,8 +210,8 @@ export const projects = [
         model: 'model.gltf',
         gitUrl: 'https://github.com/ramz1t/Diary',
         desc: 'School online diary service for students and teachers',
-        publicUrl: 'https://diary-fusm.onrender.com/',
-        stack: [<SiPython color="#03045e" />, <SiFastapi />, <SiPostgresql />],
+        publicUrl: null,
+        stack: [<SiPython />, <SiFastapi />, <SiPostgresql />],
         image: '/images/projects/diary.png',
     },
     {
@@ -226,12 +222,7 @@ export const projects = [
         gitUrl: 'https://github.com/ramz1t/CreditHelper_frontend',
         desc: 'Service for credits comparison and managment',
         publicUrl: 'http://timur.aboard.ru:34082',
-        stack: [
-            <SiJavascript color="#03045e" />,
-            <SiReact />,
-            <SiPython />,
-            <SiPostgresql />,
-        ],
+        stack: [<SiJavascript />, <SiReact />, <SiPython />, <SiPostgresql />],
         image: '/images/projects/credit.png',
     },
     {
@@ -239,7 +230,7 @@ export const projects = [
         name: 'Personal page',
         year: '2023',
         model: 'model.gltf',
-        gitUrl: 'https://github.com/ramz1t/personal-page',
+        gitUrl: null,
         desc: 'My developer personal portfolio, you are here now :)',
         publicUrl: 'https://ramz1.onrender.com/',
         stack: [<SiJavascript />, <SiReact />, <SiTailwindcss />],
@@ -274,7 +265,7 @@ export const projects = [
         model: 'model.gltf',
         gitUrl: 'https://github.com/ramz1t/tictactoe',
         desc: 'Tic Tac Toe game made with Swift and SwiftUI',
-        publicUrl: 'https://www.apple.com/app-store/',
+        publicUrl: null,
         stack: [<SiSwift />, <SiIos />],
         image: '/images/projects/tictactoe.png',
     },
