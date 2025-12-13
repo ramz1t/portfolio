@@ -21,7 +21,7 @@ const SkillList = () => {
                                     key={key}
                                 >
                                     {el.icon}
-                                    {el.name}
+                                    {el.title}
                                 </li>
                             ))}
                         </ul>

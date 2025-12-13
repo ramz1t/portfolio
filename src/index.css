@@ -44,3 +44,9 @@ section {
         transform: translateY(20px);
     }
 }
+
+.squircle {
+    @supports (corner-shape: squircle) {
+        corner-shape: squircle;
+    }
+}

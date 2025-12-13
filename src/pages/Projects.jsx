@@ -1,5 +1,4 @@
 import React from 'react'
-import { useState } from 'react'
 import ProjectCard from '../components/ProjectCard'
 import { projects } from '../data'
 
@@ -14,7 +13,11 @@ const Projects = () => {
                 </p> */}
                 <ul className="grid xl:grid-cols-2 gap-14 max-md:max-w-xs md:w-10/12 lg:w-8/12 xl:w-full mx-auto">
                     {projects.map((project, key) => (
-                        <ProjectCard key={key} {...project} />
+                        <ProjectCard
+                            key={key}
+                            {...project}
+                            hasMoreInfo={project.descFull?.length > 0}
+                        />
                     ))}
                 </ul>
             </div>

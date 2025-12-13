@@ -10,100 +10,84 @@ import {
     SiDocker,
     SiNotion,
     // SiCplusplus,
-    // SiDjango,
+    SiDjango,
     SiNginx,
     SiTelegram,
     SiTailwindcss,
     SiSwift,
     SiIos,
+    SiGooglecloud,
+    SiApachekafka,
+    SiNextdotjs,
+    SiSanity,
 } from 'react-icons/si'
 import GithubIcon from './assets/github.svg'
 import MailIcon from './assets/email.svg'
 import TgIcon from './assets/telegram.svg'
+import LindedInIcon from './assets/linkedin.svg'
 import Twemoji from './components/Twemoji.jsx'
+
+export const tech = {
+    python: { icon: <SiPython />, title: 'Python' },
+    js: { icon: <SiJavascript />, title: 'JavaScript' },
+    ts: { icon: <SiTypescript />, title: 'TypeScript' },
+    swift: { icon: <SiSwift />, title: 'Swift' },
+    react: { icon: <SiReact />, title: 'React' },
+    fastapi: { icon: <SiFastapi />, title: 'FastAPI' },
+    sqlalchemy: { icon: <SiPostgresql />, title: 'SQLAlchemy' },
+    tailwind: { icon: <SiTailwindcss />, title: 'Tailwind CSS' },
+    swiftui: { icon: <SiSwift />, title: 'SwiftUI' },
+    git: { icon: <SiGit />, title: 'Git' },
+    docker: { icon: <SiDocker />, title: 'Docker' },
+    notion: { icon: <SiNotion />, title: 'Notion' },
+    nginx: { icon: <SiNginx />, title: 'Nginx' },
+    postgresql: { icon: <SiPostgresql />, title: 'PosgreSQL' },
+    django: { icon: <SiDjango />, title: 'Django' },
+    gcp: { icon: <SiGooglecloud />, title: 'Google Cloud' },
+    kafka: { icon: <SiApachekafka />, title: 'Apache Kafka' },
+    next: { icon: <SiNextdotjs />, title: 'Next' },
+    sanity: { icon: <SiSanity />, title: 'Sanity CMS' },
+}
 
 export const education = [
     {
         title: 'Moscow School of Programming (MSHP)',
         date: 'Sept 2019 - May 2022',
     },
-    {
-        title: 'Foxford online school, Russia',
-        date: 'Sept 2022 - May 2023',
-    },
+    // {
+    //     title: 'Foxford online school, Russia',
+    //     date: 'Sept 2022 - May 2023',
+    // },
     {
         title: 'Computer Science BS, Kristianstad University, Sweden',
         date: 'Sept 2024 - Now',
+    },
+    {
+        title: 'Software Engineer Intern, IKEA, Sweden',
+        date: 'Sept 2025 - March 2026',
     },
 ]
 
 export const stack = [
     {
         title: 'Languages',
-        group: [
-            {
-                name: 'Python',
-                icon: <SiPython />,
-            },
-            {
-                name: 'JS',
-                icon: <SiJavascript />,
-            },
-            {
-                name: 'TS',
-                icon: <SiTypescript />,
-            },
-            {
-                name: 'Swift',
-                icon: <SiSwift />,
-            },
-        ],
+        group: [tech.python, tech.js, tech.ts, tech.swift],
     },
     {
         title: 'Frameworks',
         group: [
-            {
-                name: 'React',
-                icon: <SiReact />,
-            },
-            {
-                name: 'Fastapi',
-                icon: <SiFastapi />,
-            },
-            {
-                name: 'SQLAlchemy',
-                icon: <SiPostgresql />,
-            },
-            {
-                name: 'Tailwind CSS',
-                icon: <SiTailwindcss />,
-            },
-            {
-                name: 'SwiftUI',
-                icon: <SiSwift />,
-            },
+            tech.react,
+            tech.next,
+            tech.fastapi,
+            tech.sqlalchemy,
+            tech.tailwind,
+            tech.swiftui,
+            tech.django,
         ],
     },
     {
         title: 'Other',
-        group: [
-            {
-                name: 'Git',
-                icon: <SiGit />,
-            },
-            {
-                name: 'Docker',
-                icon: <SiDocker />,
-            },
-            {
-                name: 'Notion',
-                icon: <SiNotion />,
-            },
-            {
-                name: 'Nginx',
-                icon: <SiNginx />,
-            },
-        ],
+        group: [tech.git, tech.docker, tech.nginx, tech.gcp, tech.kafka],
     },
 ]
 
@@ -139,11 +123,11 @@ export const aboutList = [
             <ul>
                 <li className="hidden md:flex gap-3">
                     <Twemoji emoji="🇸🇪" />
-                    Swedish (A2)
+                    Swedish (B1)
                 </li>
                 <li className="flex md:hidden gap-3">
                     <Twemoji emoji="🇸🇪" />
-                    SE (A2)
+                    SE (B1)
                 </li>
                 <li className="hidden md:flex gap-3">
                     <Twemoji emoji="🇷🇺" />
@@ -182,6 +166,11 @@ export const links = [
         icon: MailIcon,
         alt: 'email adress',
     },
+    {
+        href: 'https://www.linkedin.com/in/ramz1/',
+        icon: LindedInIcon,
+        alt: 'linkedin profile',
+    },
 ]
 
 export const hobbies = [
@@ -204,80 +193,171 @@ export const hobbies = [
 
 export const projects = [
     {
-        id: '1',
+        id: 1,
         name: 'Diary',
         year: '2022',
         model: 'model.gltf',
         gitUrl: 'https://github.com/ramz1t/Diary',
         desc: 'School online diary service for students and teachers',
         publicUrl: null,
-        stack: [<SiPython />, <SiFastapi />, <SiPostgresql />],
-        image: '/images/projects/diary.png',
+        stack: [tech.python, tech.fastapi, tech.sqlalchemy, tech.js],
+        image: '/images/projects/diary/index.png',
+        descFull:
+            'Diary is a web-based diary platform designed for schools. It features an admin panel for managing schedules, groups, teachers, and updating data. Teachers can assign homework, manage semester and final grades, while students view their information in a clear and user-friendly interface. This project was my first attempt at building a fullstack application using FastAPI, vanilla JavaScript, and SQLAlchemy. It helped me understand backend APIs, frontend integration, and database interaction while solving real-world educational workflow needs in a structured way.\n',
+        features: [
+            {
+                title: 'Admin panel',
+                image: 'images/projects/diary/admin.png',
+            },
+            {
+                title: 'Homework',
+                image: 'images/projects/diary/homework.png',
+            },
+            {
+                title: "Student's marks",
+                image: 'images/projects/diary/marks-student.png',
+            },
+            {
+                title: 'Final marks',
+                image: 'images/projects/diary/marks-teacher.png',
+            },
+        ],
     },
     {
-        id: '4',
+        id: 2,
         name: 'CreditHelper',
         year: '2022',
         model: 'model.gltf',
         gitUrl: 'https://github.com/ramz1t/CreditHelper_frontend',
         desc: 'Service for credits comparison and managment',
         publicUrl: 'https://timur.aboard.ru/credit-helper/',
-        stack: [<SiJavascript />, <SiReact />, <SiPython />, <SiPostgresql />],
+        stack: [tech.js, tech.react, tech.python, tech.postgresql],
         image: '/images/projects/credit.png',
+        slug: 'credit',
+        features: [],
     },
     {
-        id: '5',
+        id: 3,
         name: 'Personal page',
         year: '2023',
         model: 'model.gltf',
-        gitUrl: null,
+        gitUrl: 'https://github.com/ramz1t/PersonalPage',
         desc: 'My developer personal portfolio, you are here now :)',
-        publicUrl: 'https://ramz1.onrender.com/',
-        stack: [<SiJavascript />, <SiReact />, <SiTailwindcss />],
+        stack: [tech.js, tech.react, tech.tailwind],
         image: '/images/projects/ramz1.png',
+        slug: 'personal-page',
+        features: [],
     },
     {
-        id: '6',
+        id: 4,
         name: 'Grocket',
-        year: '2023',
+        year: '2023 - 2024',
         model: 'model.gltf',
-        gitUrl: 'https://github.com/alexzawadsky/Grocket',
+        gitUrl: 'https://github.com/ramz1t/Grocket',
         desc: 'International online marketplace for secondhand items',
         publicUrl: 'https://timur.aboard.ru/grocket/',
-        stack: [<SiReact />, <SiTailwindcss />, <SiDocker />, <SiNginx />],
-        image: '/images/projects/grocket.png',
+        stack: [tech.react, tech.tailwind, tech.docker, tech.nginx],
+        image: '/images/projects/grocket/index.png',
+        slug: 'grocket',
+        descFull:
+            'Grocket is a demo of an international online marketplace that specializes in secondhand items. It provides a platform for users to buy and sell a variety of used goods from all over the world, including clothing, electronics, furniture, and more. The platform also includes search with filters, messenger built with Websockets.',
+        features: [
+            {
+                title: 'Product details',
+                image: 'images/projects/grocket/details.png',
+            },
+            {
+                title: 'Promotions with Stripe payment-gateway',
+                image: 'images/projects/grocket/promotions.png',
+            },
+            {
+                title: 'Seller reviews',
+                image: 'images/projects/grocket/comments.png',
+            },
+            {
+                title: 'Categories tree',
+                image: 'images/projects/grocket/categories.png',
+            },
+        ],
     },
     {
-        id: '6',
-        name: 'Ph. portfolio',
+        id: 5,
+        name: 'Portfolio for Simon',
         year: '2023',
         model: 'model.gltf',
         gitUrl: 'https://github.com/ramz1t/simon-kuleshov',
         desc: 'Photographer portfolio for Simon Kuleshov',
         publicUrl: 'https://simon-kuleshov.onrender.com/',
-        stack: [<SiJavascript />, <SiReact />, <SiTailwindcss />],
+        stack: [tech.js, tech.react, tech.tailwind],
         image: '/images/projects/simon.png',
+        slug: 'ph-portfolio',
+        features: [],
     },
     {
-        id: '6',
+        id: 6,
         name: 'Tic Tac Toe',
         year: '2023',
         model: 'model.gltf',
         gitUrl: 'https://github.com/ramz1t/tictactoe',
         desc: 'Tic Tac Toe game made with Swift and SwiftUI',
         publicUrl: null,
-        stack: [<SiSwift />, <SiIos />],
+        stack: [tech.swift, tech.swiftui],
         image: '/images/projects/tictactoe.png',
+        slug: 'tictactoe',
+        features: [],
     },
     {
-        id: '6',
-        name: 'Video editor portfolio',
+        id: 7,
+        name: 'Portfolio for Anton',
         year: '2024',
         model: 'model.gltf',
         gitUrl: 'https://github.com/ramz1t/AntonMartynov',
         desc: 'Video editor portfolio for Anton Martynov',
         publicUrl: 'https://martynov.onrender.com/',
-        stack: [<SiJavascript />, <SiReact />, <SiTailwindcss />],
+        stack: [tech.js, tech.react, tech.tailwind],
         image: '/images/projects/anton.png',
+        slug: 'video-portfolio',
+        features: [],
+    },
+    {
+        id: 8,
+        name: 'Collabra',
+        year: '2024 - Now',
+        model: 'model.gltf',
+        gitUrl: 'https://github.com/ramz1t/AntonMartynov',
+        desc: 'Taskboard, teams and more. Still in BETA',
+        publicUrl: 'https://timur.aboard.ru/collabra/',
+        stack: [tech.ts, tech.react, tech.tailwind, tech.django, tech.python],
+        image: '/images/projects/collabra.png',
+        slug: 'collabra',
+        features: [],
+    },
+    {
+        id: 9,
+        name: 'Portfolio for Viktor',
+        year: '2025',
+        model: 'model.gltf',
+        gitUrl: 'https://github.com/ramz1t/viktorpavlenko',
+        desc: 'Dynamic portfolio for Viktor Pavlenko',
+        descFull:
+            'In this project I connected Sanity CMS to make it easier to maintain the project and update content swifty. This let me pre-define multiple layout templates so that each project is represented in best possible matter. Examples are below',
+        publicUrl: 'https://viktorpavlenko.vercel.app/',
+        stack: [tech.ts, tech.tailwind, tech.next, tech.sanity],
+        image: '/images/projects/viktor.png',
+        slug: 'viktor',
+        features: [
+            {
+                title: 'Default layout',
+                image: 'images/projects/viktor/main.png',
+            },
+            {
+                title: 'Zig-zag layout',
+                image: 'images/projects/viktor/zig.png',
+            },
+            {
+                title: 'Three columns layout',
+                image: 'images/projects/viktor/cols.png',
+            },
+        ],
     },
 ]

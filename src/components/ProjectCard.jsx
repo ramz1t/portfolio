@@ -1,66 +1,65 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { RiExternalLinkLine } from 'react-icons/ri'
+import OuterDialog from './dialog/OuterDialog.jsx'
 import { TbBrandGithub } from 'react-icons/tb'
-import { useEffect } from 'react'
-import * as THREE from 'three'
-import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
+import InteractiveButtonGroup from './InteractiveButtonGroup.jsx'
+import ProjectActionButton from './ProjectActionButton.jsx'
 
-const ProjectCard = ({
-    id,
-    name,
-    model,
-    year,
-    gitUrl,
-    publicUrl,
-    stack,
-    desc,
-    image,
-}) => {
-    // useEffect(() => {
+const ProjectCard = (props) => {
+    const [open, setOpen] = useState(false)
+    const { name, year, gitUrl, publicUrl, stack, desc, image, hasMoreInfo } =
+        props
 
-    //     const scene = new THREE.Scene()
-    //     scene.background = new THREE.Color(0xFFFFFF)
-    //     const camera = new THREE.PerspectiveCamera(75, 180 / 176, 0.1, 1000)
-    //     camera.position.set(0, 1, 0)
-    //     const renderer = new THREE.WebGLRenderer({
-    //         canvas: document.querySelector(`#bg-${id}`)
-    //     })
-    //     renderer.setSize(180, 176)
-    //     const geo = new THREE.BoxGeometry(1, 1, 1)
-    //     const material = new THREE.MeshBasicMaterial({ color: 0x111111 })
-    //     const cube = new THREE.Mesh(geo, material)
-    //     scene.add(cube)
+    const buildActionButtons = () => {
+        const buttons = []
 
-    //     let pointLight = new THREE.PointLight(0xffffff)
-    //     scene.add(pointLight);
-    //     let lightHelper = new THREE.PointLightHelper(pointLight)
-    //     // scene.add(lightHelper)
-    //     pointLight.position.set(0, 10, 10)
-    //     const ambientLight = new THREE.AmbientLight(0xffffff)
-    //     scene.add(ambientLight)
-
-    //     // let safe
-    //     // const loader = new GLTFLoader()
-    //     // loader.load(`./models/${model}`, (gltf) => {
-    //     //     safe = gltf.scene
-    //     //     safe.position.set(0, 0, 0)
-    //     //     // scene.add(safe)
-    //     //     safe.scale.set(4, 4, 4)
-    //     //     safe.rotation.y = 300
-    //     // })
-
-    //     const animate = () => {
-    //         // if (safe && safe.rotation) {
-    //         //     safe.rotation.y += 0.001
-    //         // }
-    //         requestAnimationFrame(animate);
-    //         renderer.render(scene, camera);
-    //     }
-
-    //     animate()
-    // }, [])
+        if (hasMoreInfo) {
+            buttons.push(
+                <ProjectActionButton
+                    key="read-more"
+                    title="Read more"
+                    style="primary"
+                    onClick={() => setOpen(true)}
+                />
+            )
+            buttons.push(
+                <ProjectActionButton
+                    key="public-link-icon"
+                    icon={<RiExternalLinkLine />}
+                    href={publicUrl}
+                    style="secondary"
+                    title="Open"
+                />
+            )
+        } else {
+            if (publicUrl) {
+                buttons.push(
+                    <ProjectActionButton
+                        key="public-link"
+                        title="Open"
+                        icon={<RiExternalLinkLine />}
+                        href={publicUrl}
+                        style="primary"
+                    />
+                )
+            }
+            if (gitUrl) {
+                buttons.push(
+                    <ProjectActionButton
+                        key="github-link"
+                        title="GitHub"
+                        icon={<TbBrandGithub />}
+                        href={gitUrl}
+                        style="secondary"
+                    />
+                )
+            }
+        }
+        return buttons
+    }
 
     return (
-        <li className="grid md:grid-cols-[2fr_1fr] gap-7 h-fit border-2 border-primary-900 rounded-2xl p-7 items-center">
+        <li className="grid md:grid-cols-[2fr_1fr] gap-7 border-2 border-primary-900 rounded-2xl p-7 items-center h-full">
             <a
                 href={publicUrl}
                 target="_blank"
@@ -71,8 +70,8 @@ const ProjectCard = ({
             <div className="flex flex-col gap-2 justify-between h-full max-h-fit">
                 <h3 className="text-2xl">{name}</h3>
                 <time className="text-slate-500">{year}</time>
-                <ul className="flex md:grid gap-4 xl:gap-3 md:flex-3 md:grid-cols-4">
-                    {stack.map((icon, key) => (
+                <ul className="flex gap-3 flex-wrap">
+                    {stack.map(({ icon }, key) => (
                         <li
                             key={key}
                             className="rounded-full border-2 border-primary-900 w-8 h-8 flex items-center justify-center"
@@ -81,29 +80,16 @@ const ProjectCard = ({
                         </li>
                     ))}
                 </ul>
-                <p className="grow pt-2">{desc}</p>
-                <div className="flex justify-between items-center">
-                    {publicUrl && (
-                        <a
-                            className="bg-primary-900 text-slate-50 py-2 px-4 rounded-full hover:scale-105 transition-all h-10"
-                            href={publicUrl}
-                            target="_blank"
-                        >
-                            Live demo
-                        </a>
-                    )}
-                    {gitUrl && (
-                        <a
-                            className="border-2 rounded-full hover:scale-105 transition-all h-10 min-w-[40px] px-4 flex items-center justify-center border-primary-900 gap-3 max-md:py-2 max-md:px-4"
-                            href={gitUrl}
-                            target="_blank"
-                        >
-                            {<TbBrandGithub />}
-                            <p className={publicUrl && 'md:hidden'}>GitHub</p>
-                        </a>
-                    )}
-                </div>
+                <p className="grow">{desc}</p>
+                <OuterDialog
+                    data={props}
+                    close={() => setOpen(false)}
+                    isOpen={open}
+                />
             </div>
+            <InteractiveButtonGroup>
+                {buildActionButtons()}
+            </InteractiveButtonGroup>
         </li>
     )
 }
