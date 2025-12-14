@@ -326,11 +326,30 @@ export const projects = [
         model: 'model.gltf',
         gitUrl: 'https://github.com/ramz1t/AntonMartynov',
         desc: 'Taskboard, teams and more. Still in BETA',
+        descFull:
+            'Collabra is my flagship project - a collaborative project management platform inspired by tools like Jira, focused on task tracking, team management, deadlines, and extensible workflows, with additional features planned. It implements modern frontend best practices and a fully custom design system built from the ground up. I was responsible for the full deployment on my own server, including reverse proxy configuration, and I also designed and implemented the complete backend for tasks and tagging.',
         publicUrl: 'https://timur.aboard.ru/collabra/',
         stack: [tech.ts, tech.react, tech.tailwind, tech.django, tech.python],
         image: '/images/projects/collabra.png',
         slug: 'collabra',
-        features: [],
+        features: [
+            {
+                title: 'Tasks editing',
+                image: 'images/projects/collabra/edit.png',
+            },
+            {
+                title: 'Demo mode',
+                image: 'images/projects/collabra/demo.png',
+            },
+            {
+                title: 'Admin roles and labels',
+                image: 'images/projects/collabra/user.png',
+            },
+            {
+                title: 'Tasks list with filters and search',
+                image: 'images/projects/collabra/list.png',
+            },
+        ],
     },
     {
         id: 9,

@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import { RiExternalLinkLine } from 'react-icons/ri'
 import OuterDialog from './dialog/OuterDialog.jsx'
 import { TbBrandGithub } from 'react-icons/tb'
-import InteractiveButtonGroup from './InteractiveButtonGroup.jsx'
 import ProjectActionButton from './ProjectActionButton.jsx'
 
 const ProjectCard = (props) => {
@@ -22,15 +21,28 @@ const ProjectCard = (props) => {
                     onClick={() => setOpen(true)}
                 />
             )
-            buttons.push(
-                <ProjectActionButton
-                    key="public-link-icon"
-                    icon={<RiExternalLinkLine />}
-                    href={publicUrl}
-                    style="secondary"
-                    title="Open"
-                />
-            )
+            if (publicUrl) {
+                buttons.push(
+                    <ProjectActionButton
+                        key="public-link-icon"
+                        icon={<RiExternalLinkLine />}
+                        href={publicUrl}
+                        style="secondary"
+                        title="Open"
+                    />
+                )
+            }
+            if (!publicUrl && gitUrl) {
+                buttons.push(
+                    <ProjectActionButton
+                        key="github-link"
+                        title="GitHub"
+                        icon={<TbBrandGithub />}
+                        href={gitUrl}
+                        style="secondary"
+                    />
+                )
+            }
         } else {
             if (publicUrl) {
                 buttons.push(
@@ -59,13 +71,13 @@ const ProjectCard = (props) => {
     }
 
     return (
-        <li className="grid md:grid-cols-[2fr_1fr] gap-7 border-2 border-primary-900 rounded-2xl p-7 items-center h-full">
+        <li className="grid md:grid-cols-[2fr_1fr] gap-7 border-2 border-primary-900 rounded-2xl p-5 md:p-7 items-center h-full">
             <a
                 href={publicUrl}
                 target="_blank"
                 className="rounded-xl border hover:scale-[1.01] transition-all overflow-hidden h-fit"
             >
-                <img src={image} className="" />
+                <img src={image} className="" alt={name} />
             </a>
             <div className="flex flex-col gap-2 justify-between h-full max-h-fit">
                 <h3 className="text-2xl">{name}</h3>
@@ -87,9 +99,7 @@ const ProjectCard = (props) => {
                     isOpen={open}
                 />
             </div>
-            <InteractiveButtonGroup>
-                {buildActionButtons()}
-            </InteractiveButtonGroup>
+            <div className="flex gap-3 w-full">{buildActionButtons()}</div>
         </li>
     )
 }

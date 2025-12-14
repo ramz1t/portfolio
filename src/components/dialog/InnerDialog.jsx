@@ -4,13 +4,20 @@ import cn from 'classnames'
 import { IoClose } from 'react-icons/io5'
 import { TbBrandGithub } from 'react-icons/tb'
 import { RiExternalLinkLine } from 'react-icons/ri'
+import useMediaQuery from '../../hooks/useMediaQuery.js'
 
 export const InnerDialog = memo(({ data, close, className }) => {
     const dialogRef = useRef(null)
     const { scrollY } = useScroll({ container: dialogRef })
 
+    const isTabletUp = useMediaQuery('(min-width: 768px)')
+
     const paddingY = useTransform(scrollY, [0, 80], [28, 12])
-    const titleSize = useTransform(scrollY, [0, 80], ['60px', '35px'])
+    const titleSize = useTransform(
+        scrollY,
+        [0, 80],
+        isTabletUp ? ['60px', '35px'] : ['36px', '26px']
+    )
     const yearOpacity = useTransform(scrollY, [0, 60], [1, 0])
     const headerShadow = useTransform(
         scrollY,
@@ -63,7 +70,7 @@ export const InnerDialog = memo(({ data, close, className }) => {
 
                 <motion.p
                     style={{ opacity: yearOpacity }}
-                    className="text-gray-600 font-semibold text-lg md:text-2xl mt-[22px] ml-5"
+                    className="text-gray-600 font-semibold text-lg md:text-2xl md:mt-[22px] ml-5"
                 >
                     {year}
                 </motion.p>
@@ -130,8 +137,8 @@ export const InnerDialog = memo(({ data, close, className }) => {
 
                     {features.length > 0 && (
                         <>
-                            <p className="pt-10 text-3xl col-span-full">
-                                Screenshots
+                            <p className="pt-10 text-2xl md:text-3xl col-span-full">
+                                Features
                             </p>
                             {features.map((feature, key) => (
                                 <div key={key}>
