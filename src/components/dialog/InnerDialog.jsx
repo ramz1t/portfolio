@@ -95,8 +95,8 @@ export const InnerDialog = memo(({ data, close, className }) => {
                                     href={publicUrl}
                                     target="_blank"
                                 >
-                                    Open
                                     <RiExternalLinkLine />
+                                    Open
                                 </a>
                             )}
                             {gitUrl && (

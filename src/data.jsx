@@ -324,7 +324,7 @@ export const projects = [
         name: 'Collabra',
         year: '2024 - Now',
         model: 'model.gltf',
-        gitUrl: 'https://github.com/ramz1t/AntonMartynov',
+        gitUrl: 'https://github.com/ramz1t/collabra',
         desc: 'Taskboard, teams and more. Still in BETA',
         descFull:
             'Collabra is my flagship project - a collaborative project management platform inspired by tools like Jira, focused on task tracking, team management, deadlines, and extensible workflows, with additional features planned. It implements modern frontend best practices and a fully custom design system built from the ground up. I was responsible for the full deployment on my own server, including reverse proxy configuration, and I also designed and implemented the complete backend for tasks and tagging.',
