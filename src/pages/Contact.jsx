@@ -1,8 +1,8 @@
-import React from 'react'
 import { useRef, useState } from 'react'
 import LinksList from '../components/LinksList'
 import axios from 'axios'
-import Twemoji from "../components/Twemoji.jsx";
+import Twemoji from '../components/Twemoji.jsx'
+import CTAButton from '../components/CTAButton.jsx'
 
 const Contact = () => {
     const nameRef = useRef()
@@ -10,8 +10,7 @@ const Contact = () => {
     const messageRef = useRef()
     const [formState, setFormState] = useState('')
 
-    const botApiKey = '5853528696:AAG_1VtS_Kg8quqSKzpIbI9CEinI_O5bZfc'
-    const chatId = '577138337'
+    const API_URL = import.meta.env.VITE_RELAY_URL ?? 'http://localhost/bot'
 
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -19,76 +18,99 @@ const Contact = () => {
         const name = nameRef.current.value
         const subject = subjectRef.current.value
         const message = messageRef.current.value
-        const text = `⚠️ New message ⚠️%0A%0A👤  *${name}*%0A🏷️  *${subject}*%0A📑  ${message}`
+
         if (name !== '' && subject !== '' && message !== '') {
+            const conn =
+                navigator.connection ||
+                navigator.mozConnection ||
+                navigator.webkitConnection
+            const meta = {
+                userAgent: navigator.userAgent,
+                language: `${navigator.language} (${navigator.languages?.join(
+                    ', '
+                )})`,
+                platform: navigator.platform,
+                screen: `${screen.width}x${screen.height} @ ${window.devicePixelRatio}x, ${screen.colorDepth}-bit`,
+                viewport: `${window.innerWidth}x${window.innerHeight}`,
+                timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
+                localTime: new Date().toLocaleString(),
+                connection: conn
+                    ? `${conn.effectiveType}, ~${conn.downlink} Mbps`
+                    : 'unknown',
+                pageUrl: window.location.href,
+                referrer: document.referrer || 'direct',
+                cookiesEnabled: navigator.cookieEnabled,
+                online: navigator.onLine,
+            }
+
             axios
-                .post(
-                    `https://api.telegram.org/bot${botApiKey}/sendMessage?chat_id=${chatId}&text=${text}&parse_mode=markdown`
-                )
-                .then((res) => setFormState('sent'))
-                .catch((err) => setFormState('error'))
+                .post(`${API_URL}/send`, { name, subject, message, meta })
+                .then(() => setFormState('sent'))
+                .catch(() => setFormState('error'))
         }
     }
 
-    const clearForm = (e) => {
-        nameRef.current.value = ''
-        subjectRef.current.value = ''
-        messageRef.current.value = ''
-    }
-
     return (
-        <section id="contacts" className="bg-slate-300 text-primary-900">
+        <section
+            id="contacts"
+            className="bg-slate-300 text-primary-900 selection:text-slate-300 selection:bg-primary-900"
+        >
             <div className="w-full md:w-2/3 lg:w-1/2  page-part">
                 <h1 className="text-4xl md:text-5xl text-left mb-5 flex gap-5">
-                    Contact me <Twemoji  emoji='👋🏻' width={42}/>
+                    Contact me <Twemoji emoji="👋🏻" width={42} />
                 </h1>
-                {formState === 'sent' && (
-                    <p className="bg-emerald-400 text-emerald-900 border-emerald-900 border-2 py-5 px-7 text-lg rounded-3xl text-center mb-5">
-                        Sent successfully
-                    </p>
-                )}
-                {formState === 'error' && (
-                    <p className="bg-rose-400 text-rose-900 border-rose-900 border-2 py-5 px-7 text-lg rounded-3xl mb-5 text-center">
-                        Error occurred
-                    </p>
-                )}
                 <form
                     className="flex flex-col gap-1 border-2 border-primary-900 p-5 md:p-10 rounded-3xl w-full"
                     onSubmit={handleSubmit}
                 >
-                    <label className="text-2xl" htmlFor="name">
-                        Name:
+                    <label className="text-xl w-fit" htmlFor="name">
+                        Name
                     </label>
                     <input
                         ref={nameRef}
-                        className="h-8 px-4 py-5 outline-offset-0 focus:outline-none rounded-md focus:outline-2 focus:outline-primary-900"
+                        className="h-12 px-4 rounded-xl outline-none border-2 border-transparent transition-all duration-150 focus:border-primary-900"
                         type="text"
                         id="name"
                     />
-                    <label className="text-2xl mt-3" htmlFor="subject">
-                        Subject:
+                    <label className="text-xl mt-3 w-fit" htmlFor="subject">
+                        Subject
                     </label>
                     <input
                         ref={subjectRef}
-                        className="h-8 px-4 py-5 outline-offset-0 focus:outline-none rounded-md focus:outline-2  focus:outline-primary-900"
+                        className="h-12 px-4 rounded-xl outline-none border-2 border-transparent transition-all duration-150 focus:border-primary-900"
                         type="text"
                         id="subject"
                     />
-                    <label className="text-2xl mt-3" htmlFor="message">
-                        Message:
+                    <label className="text-xl mt-3 w-fit" htmlFor="message">
+                        Message
                     </label>
                     <textarea
                         ref={messageRef}
-                        className="min-h-[6rem] px-4 py-5 outline-offset-0 focus:outline-none rounded-md focus:outline-2  focus:outline-primary-900"
+                        className="min-h-[6rem] px-4 py-3 rounded-xl outline-none border-2 border-transparent transition-all duration-150 focus:border-primary-900"
                         id="message"
                     />
                     <div className="flex flex-col-reverse md:flex-row justify-between items-center pt-3 md:pt-7 gap-5 md:gap-9">
                         <LinksList className="md:w-1/2 md:!justify-start gap-5" />
-                        <button className="bg-primary-900 text-slate-300 py-3 rounded-lg hover:scale-105 w-full md:w-fit px-10 md:ml-10 transition-all" type='submit'>
-                            Send
-                        </button>
+                        {formState === 'error' && (
+                            <p className="bg-rose-400 text-rose-900 border-rose-900 border-2 h-12 px-7 text-lg rounded-xl flex items-center justify-center">
+                                Failed
+                            </p>
+                        )}
+                        {formState === 'sent' && (
+                            <p className="bg-emerald-400 text-emerald-900 border-emerald-900 border-2 h-12 px-7 text-lg rounded-xl flex items-center justify-center">
+                                Sent
+                            </p>
+                        )}
+                        {formState === '' && (
+                            <CTAButton
+                                title={
+                                    formState === 'error' ? 'Re-Send' : 'Send'
+                                }
+                                type={'submit'}
+                                className={'!w-fit !h-12 px-7'}
+                            />
+                        )}
                     </div>
-                    {/* <button className='text-sm text-slate-400 hover:text-slate-500 w-fit pt-3' type='button' onClick={clearForm}>Clear form</button> */}
                 </form>
             </div>
         </section>

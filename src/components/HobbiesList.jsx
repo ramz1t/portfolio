@@ -9,7 +9,7 @@ const HobbiesList = () => {
                 {hobbies.map((el, key) => (
                     <li className="flex flex-col gap-3" key={key}>
                         <img
-                            className="w-full border-2 rounded-2xl hover:scale-105 transition-all duration-100"
+                            className="w-full border-2 rounded-2xl hover:scale-105 transition-all duration-150"
                             src={el.url}
                             alt={el?.alt}
                             style={{

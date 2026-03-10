@@ -9,7 +9,7 @@ import {
     SiGit,
     SiDocker,
     SiNotion,
-    // SiCplusplus,
+    SiCplusplus,
     SiDjango,
     SiNginx,
     SiTelegram,
@@ -20,6 +20,8 @@ import {
     SiApachekafka,
     SiNextdotjs,
     SiSanity,
+    SiApacheairflow,
+    SiKubernetes,
 } from 'react-icons/si'
 import GithubIcon from './assets/github.svg'
 import MailIcon from './assets/email.svg'
@@ -47,20 +49,19 @@ export const tech = {
     kafka: { icon: <SiApachekafka />, title: 'Apache Kafka' },
     next: { icon: <SiNextdotjs />, title: 'Next' },
     sanity: { icon: <SiSanity />, title: 'Sanity CMS' },
+    cpp: { icon: <SiCplusplus />, title: 'C++' },
+    airflow: { icon: <SiApacheairflow />, title: 'Apache Airflow' },
+    kuber: { icon: <SiKubernetes />, title: 'K8S' }
 }
 
-export const education = [
+export const educationAndExperience = [
     {
         title: 'Moscow School of Programming (MSHP)',
         date: 'Sept 2019 - May 2022',
     },
-    // {
-    //     title: 'Foxford online school, Russia',
-    //     date: 'Sept 2022 - May 2023',
-    // },
     {
-        title: 'Computer Science BS, Kristianstad University, Sweden',
-        date: 'Sept 2024 - Now',
+        title: 'B.S. CS, Kristianstad University, Sweden',
+        date: 'Sept 2024 - June 2027',
     },
     {
         title: 'Software Engineer Intern, IKEA, Sweden',
@@ -71,7 +72,7 @@ export const education = [
 export const stack = [
     {
         title: 'Languages',
-        group: [tech.python, tech.js, tech.ts, tech.swift],
+        group: [tech.python, tech.js, tech.ts, tech.swift, tech.cpp],
     },
     {
         title: 'Frameworks',
@@ -87,7 +88,7 @@ export const stack = [
     },
     {
         title: 'Other',
-        group: [tech.git, tech.docker, tech.nginx, tech.gcp, tech.kafka],
+        group: [tech.git, tech.docker, tech.kuber, tech.nginx, tech.gcp, tech.kafka, tech.airflow],
     },
 ]
 
@@ -107,7 +108,7 @@ const age = Math.floor(ageInYears)
 export const aboutList = [
     {
         title: 'Full name',
-        data: 'Ramazanov Timur',
+        data: 'Timur Ramazanov',
     },
     {
         title: 'Age',
@@ -121,6 +122,14 @@ export const aboutList = [
         title: 'Languages',
         data: (
             <ul>
+                <li className="hidden md:flex gap-3">
+                    <Twemoji emoji="🇬🇧" />
+                    English (C1)
+                </li>
+                <li className="flex md:hidden gap-3">
+                    <Twemoji emoji="🇬🇧" />
+                    EN (C1)
+                </li>
                 <li className="hidden md:flex gap-3">
                     <Twemoji emoji="🇸🇪" />
                     Swedish (B1)
@@ -136,14 +145,6 @@ export const aboutList = [
                 <li className="flex md:hidden gap-3">
                     <Twemoji emoji="🇷🇺" />
                     RU (Native)
-                </li>
-                <li className="hidden md:flex gap-3">
-                    <Twemoji emoji="🇬🇧" />
-                    English (C1)
-                </li>
-                <li className="flex md:hidden gap-3">
-                    <Twemoji emoji="🇬🇧" />
-                    EN (C1)
                 </li>
             </ul>
         ),

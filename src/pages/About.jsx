@@ -5,7 +5,7 @@ import SkillList from '../components/SkillList'
 
 const About = () => {
     return (
-        <section id="ed_and_hobbies" className="bg-slate-900 text-white">
+        <section id="ed_and_hobbies" className="bg-slate-900 text-white selection:bg-white selection:text-slate-900">
             <div className="page-part gap-y-20 gap-x-10 dual-section">
                 <SkillList />
                 <EdTimeline />

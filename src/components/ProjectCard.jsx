@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { RiExternalLinkLine } from 'react-icons/ri'
 import OuterDialog from './dialog/OuterDialog.jsx'
 import { TbBrandGithub } from 'react-icons/tb'
-import ProjectActionButton from './ProjectActionButton.jsx'
+import CTAButton from './CTAButton.jsx'
 
 const ProjectCard = (props) => {
     const [open, setOpen] = useState(false)
@@ -14,7 +14,7 @@ const ProjectCard = (props) => {
 
         if (hasMoreInfo) {
             buttons.push(
-                <ProjectActionButton
+                <CTAButton
                     key="read-more"
                     title="Read more"
                     style="primary"
@@ -23,7 +23,7 @@ const ProjectCard = (props) => {
             )
             if (publicUrl) {
                 buttons.push(
-                    <ProjectActionButton
+                    <CTAButton
                         key="public-link-icon"
                         icon={<RiExternalLinkLine />}
                         href={publicUrl}
@@ -34,7 +34,7 @@ const ProjectCard = (props) => {
             }
             if (!publicUrl && gitUrl) {
                 buttons.push(
-                    <ProjectActionButton
+                    <CTAButton
                         key="github-link"
                         title="GitHub"
                         icon={<TbBrandGithub />}
@@ -46,7 +46,7 @@ const ProjectCard = (props) => {
         } else {
             if (publicUrl) {
                 buttons.push(
-                    <ProjectActionButton
+                    <CTAButton
                         key="public-link"
                         title="Open"
                         icon={<RiExternalLinkLine />}
@@ -57,7 +57,7 @@ const ProjectCard = (props) => {
             }
             if (gitUrl) {
                 buttons.push(
-                    <ProjectActionButton
+                    <CTAButton
                         key="github-link"
                         title="GitHub"
                         icon={<TbBrandGithub />}
@@ -75,7 +75,7 @@ const ProjectCard = (props) => {
             <a
                 href={publicUrl}
                 target="_blank"
-                className="rounded-xl border hover:scale-[1.01] transition-all overflow-hidden h-fit"
+                className="rounded-xl border hover:scale-[1.01] transition-all duration-150 overflow-hidden h-fit focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-900 focus-visible:ring-offset-2"
             >
                 <img src={image} className="" alt={name} />
             </a>

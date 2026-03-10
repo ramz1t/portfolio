@@ -1,5 +1,5 @@
 import React from 'react'
-import { education } from '../data'
+import { educationAndExperience } from '../data'
 
 const EdTimelineItem = ({ title, date }) => {
     return (
@@ -23,7 +23,7 @@ const EdTimeline = () => {
         <div className="w-full h-full">
             <h2 className="text-5xl pb-7">Education and Experience</h2>
             <ul className="flex flex-col-reverse">
-                {education.map((ed, key) => (
+                {educationAndExperience.map((ed, key) => (
                     <EdTimelineItem key={key} {...ed} />
                 ))}
             </ul>

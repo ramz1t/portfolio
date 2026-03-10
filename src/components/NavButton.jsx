@@ -23,7 +23,7 @@ const NavButton = ({ text, blockId, init, onClick }) => {
 
     return (
         <a
-            className="cursor-pointer text-2xl text-primary-900 flex items-center gap-2 text-center md:text-left"
+            className="cursor-pointer text-2xl text-primary-900 flex items-center gap-2 text-center md:text-left rounded-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-900 focus-visible:ring-offset-2"
             onClick={() => {
                 navigate(blockId)
                 onClick()

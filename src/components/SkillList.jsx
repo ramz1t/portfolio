@@ -1,4 +1,3 @@
-import React from 'react'
 import { stack } from '../data'
 
 const SkillList = () => {
@@ -14,10 +13,13 @@ const SkillList = () => {
                         <ul className="flex flex-wrap gap-3 ">
                             {el.group.map((el, key) => (
                                 <li
-                                    className="flex items-center gap-5 border-2 border-white rounded-full py-3 px-5 w-fit hover:scale-105 hover:cursor-default transition-all duration-100"
+                                    className="flex items-center gap-5 border-2 border-white rounded-full py-3 px-5 w-fit hover:scale-105 hover:cursor-default transition-all duration-150 group"
                                     style={{
                                         boxShadow: `0px 0px 20px rgba(255, 255, 255, 0.3)`,
+                                        transition: 'transform 150ms, box-shadow 150ms',
                                     }}
+                                    onMouseEnter={e => e.currentTarget.style.boxShadow = '0px 0px 25px rgba(255, 255, 255, 0.35)'}
+                                    onMouseLeave={e => e.currentTarget.style.boxShadow = '0px 0px 20px rgba(255, 255, 255, 0.3)'}
                                     key={key}
                                 >
                                     {el.icon}

@@ -1,40 +1,38 @@
-import React from 'react'
 import { useState } from 'react'
 import { HiPaperClip } from "react-icons/hi";
 import { IoMdArrowRoundDown } from "react-icons/io";
 import { navigate } from '../App.jsx'
+import CTAButton from '../components/CTAButton.jsx';
 
 const Landing = () => {
     const [hover, setHover] = useState(false)
 
     return (
         <>
-            <section id="landing" className="bg-slate-200 relative">
+            <section id="landing" className="bg-slate-200 text-primary-900 relative selection:bg-primary-900 selection:text-slate-200">
                 <div className="page-part gap-14 dual-section">
-                    <div className="flex flex-col gap-5 w-full">
-                        <h1 className="text-5xl text-primary-900 leading-tight">
+                    <div className="flex flex-col gap-5 lg:gap-7 w-full">
+                        <h1 className="text-5xl leading-tight">
                             Hi, my name is Timur
                             <br/>
-                            And I'm a software developer
+                            And I'm a Software Engineer
                         </h1>
-                        <h2 className="text-xl text-primary-800">
+                        <h2 className="text-xl">
                             I like making products that are useful for people
                         </h2>
                         <div className="flex gap-3">
-                            <a
-                                className="w-fit bg-primary-900 text-white rounded-lg py-3 px-5 hover:scale-105 hover:shadow-sm transition-all flex items-center gap-3"
+                            <CTAButton 
+                                icon={<HiPaperClip />} 
+                                title={"CV"}
                                 href={"/Timur Ramazanov's CV.pdf"}
-                                target='_blank'
-                            >
-                                <HiPaperClip />
-                                CV
-                            </a>
-                            <a
-                                className="hover:cursor-pointer w-fit text-primary-800 rounded-lg border-primary-800 border-2 py-3 px-5 hover:border-primary-900 hover:text-primary-900 hover:scale-105 hover:shadow-sm transition-all"
+                                className={"!h-14 !w-fit px-7"}
+                            />
+                            <CTAButton 
+                                title={"Contact me"}
                                 onClick={() => navigate("contacts")}
-                            >
-                                Contact me
-                            </a>
+                                style='secondary'
+                                className={"!h-14 !w-fit px-7"}
+                            />
                         </div>
                     </div>
                     <div className="h-full flex items-center justify-center">
