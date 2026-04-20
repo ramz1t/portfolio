@@ -2,8 +2,8 @@ FROM oven/bun:1-alpine
 
 WORKDIR /app
 
-COPY index.ts .
+COPY src/bot.ts .
 
 EXPOSE 3001
 
-CMD ["bun", "run", "index.ts"]
+CMD ["bun", "run", "bot.ts"]
