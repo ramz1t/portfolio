@@ -22,7 +22,9 @@ import {
     SiSanity,
     SiApacheairflow,
     SiKubernetes,
+    SiTurborepo,
 } from 'react-icons/si'
+import { VscMcp } from 'react-icons/vsc'
 import GithubIcon from './assets/github.svg'
 import MailIcon from './assets/email.svg'
 import TgIcon from './assets/telegram.svg'
@@ -45,13 +47,15 @@ export const tech = {
     nginx: { icon: <SiNginx />, title: 'Nginx' },
     postgresql: { icon: <SiPostgresql />, title: 'PosgreSQL' },
     django: { icon: <SiDjango />, title: 'Django' },
-    gcp: { icon: <SiGooglecloud />, title: 'Google Cloud' },
-    kafka: { icon: <SiApachekafka />, title: 'Apache Kafka' },
+    gcp: { icon: <SiGooglecloud />, title: 'GCP' },
+    kafka: { icon: <SiApachekafka />, title: 'Kafka' },
     next: { icon: <SiNextdotjs />, title: 'Next' },
     sanity: { icon: <SiSanity />, title: 'Sanity CMS' },
     cpp: { icon: <SiCplusplus />, title: 'C++' },
-    airflow: { icon: <SiApacheairflow />, title: 'Apache Airflow' },
-    kuber: { icon: <SiKubernetes />, title: 'K8S' }
+    airflow: { icon: <SiApacheairflow />, title: 'Airflow' },
+    kuber: { icon: <SiKubernetes />, title: 'K8S' },
+    mcp: { icon: <VscMcp />, title: 'MCP' },
+    turborepo: { icon: <SiTurborepo />, title: 'Turborepo' },
 }
 
 export const educationAndExperience = [
@@ -65,7 +69,7 @@ export const educationAndExperience = [
     },
     {
         title: 'Software Engineer Intern, IKEA, Sweden',
-        date: 'Sept 2025 - March 2026',
+        date: 'Sept 2025 - Currently',
     },
 ]
 
@@ -88,7 +92,17 @@ export const stack = [
     },
     {
         title: 'Other',
-        group: [tech.git, tech.docker, tech.kuber, tech.nginx, tech.gcp, tech.kafka, tech.airflow],
+        group: [
+            tech.git,
+            tech.docker,
+            // tech.kuber,
+            tech.nginx,
+            tech.gcp,
+            tech.kafka,
+            tech.airflow,
+            tech.mcp,
+            tech.turborepo,
+        ],
     },
 ]
 
