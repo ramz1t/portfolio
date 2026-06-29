@@ -92,7 +92,7 @@ export const educationAndExperience = [
     {
         title: 'Software Engineer Intern, Ingka, Sweden',
         date: 'Sept 2025 - May 2026',
-        skills: ['python', 'docker', 'gcp', 'kafka'],
+        skills: ['python', 'docker', 'gcp', 'kafka', 'fastapi', 'sqlalchemy'],
     },
     {
         title: 'Junior Software Engineer, Ingka, Sweden',

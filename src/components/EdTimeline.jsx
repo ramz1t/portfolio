@@ -11,7 +11,7 @@ const EdTimelineItem = ({
 }) => {
     return (
         <li
-            className="relative pb-2 cursor-default transition-opacity duration-150"
+            className="relative pb-2 cursor-default transition-opacity duration-150 max-lg:pointer-events-none"
             style={{ opacity: dimmed ? 0.1 : 1 }}
             onMouseEnter={() => onSkillsHover(skills)}
             onMouseLeave={onSkillsLeave}
