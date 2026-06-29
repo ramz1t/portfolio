@@ -118,7 +118,7 @@ export const InnerDialog = memo(({ data, close, className }) => {
                             ))}
                         </ul>
 
-                        <p className="pt-5">{descFull}</p>
+                        <p className="pt-5 md:text-lg lg:text-xl">{descFull}</p>
                     </div>
 
                     <a
@@ -141,7 +141,7 @@ export const InnerDialog = memo(({ data, close, className }) => {
                                         src={feature.image}
                                         alt={feature.title}
                                     />
-                                    <p className="font-semibold text-gray-600 pt-1.5">
+                                    <p className="font-semibold pt-1.5">
                                         {feature.title}
                                     </p>
                                 </div>

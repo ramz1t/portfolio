@@ -65,7 +65,7 @@ export const tech = {
     sanity: { key: 'sanity', icon: <SiSanity />, title: 'Sanity CMS' },
     cpp: { key: 'cpp', icon: <SiCplusplus />, title: 'C++' },
     airflow: { key: 'airflow', icon: <SiApacheairflow />, title: 'Airflow' },
-    kuber: { key: 'kuber', icon: <SiKubernetes />, title: 'K8S' },
+    kuber: { key: 'kuber', icon: <SiKubernetes />, title: 'k8s' },
     mcp: { key: 'mcp', icon: <VscMcp />, title: 'MCP' },
     turborepo: { key: 'turborepo', icon: <SiTurborepo />, title: 'Turborepo' },
 }
@@ -238,6 +238,7 @@ export const projects = [
     {
         id: 1,
         name: 'Diary',
+        type: 'Passion project',
         year: '2022',
         model: 'model.gltf',
         gitUrl: 'https://github.com/ramz1t/Diary',
@@ -269,6 +270,7 @@ export const projects = [
     {
         id: 2,
         name: 'CreditHelper',
+        type: 'Passion project',
         year: '2022',
         model: 'model.gltf',
         gitUrl: 'https://github.com/ramz1t/CreditHelper_frontend',
@@ -282,6 +284,7 @@ export const projects = [
     {
         id: 3,
         name: 'Personal page',
+        type: 'Portfolio',
         year: '2023',
         model: 'model.gltf',
         gitUrl: 'https://github.com/ramz1t/PersonalPage',
@@ -294,6 +297,7 @@ export const projects = [
     {
         id: 4,
         name: 'Grocket',
+        type: 'Passion project',
         year: '2023 - 2024',
         model: 'model.gltf',
         gitUrl: 'https://github.com/ramz1t/Grocket',
@@ -326,6 +330,7 @@ export const projects = [
     {
         id: 5,
         name: 'Portfolio for Simon',
+        type: 'Freelance',
         year: '2023',
         model: 'model.gltf',
         gitUrl: 'https://github.com/ramz1t/simon-kuleshov',
@@ -339,6 +344,7 @@ export const projects = [
     {
         id: 6,
         name: 'Tic Tac Toe',
+        type: 'Passion project',
         year: '2023',
         model: 'model.gltf',
         gitUrl: 'https://github.com/ramz1t/tictactoe',
@@ -352,6 +358,7 @@ export const projects = [
     {
         id: 7,
         name: 'Portfolio for Anton',
+        type: 'Freelance',
         year: '2024',
         model: 'model.gltf',
         gitUrl: 'https://github.com/ramz1t/AntonMartynov',
@@ -365,6 +372,7 @@ export const projects = [
     {
         id: 8,
         name: 'Collabra',
+        type: 'Passion project',
         year: '2024 - Now',
         model: 'model.gltf',
         gitUrl: 'https://github.com/ramz1t/collabra',
@@ -397,6 +405,7 @@ export const projects = [
     {
         id: 9,
         name: 'Portfolio for Viktor',
+        type: 'Freelance',
         year: '2025',
         model: 'model.gltf',
         gitUrl: 'https://github.com/ramz1t/viktorpavlenko',
@@ -419,6 +428,41 @@ export const projects = [
             {
                 title: 'Three columns layout',
                 image: 'images/projects/viktor/cols.png',
+            },
+        ],
+    },
+    {
+        id: 10,
+        name: 'CasinoApp',
+        type: 'Uni project',
+        year: '2026',
+        model: 'model.gltf',
+        gitUrl: 'https://github.com/ramz1t/hkr-fullstack',
+        desc: 'Fullstack project for HKR DA219B VT26',
+        descFull:
+            'In this project I owned the app UI. The component library is shared with the admin app via Turborepo. For game pages, I designed an extensible layout that manages the bet-game cycle and exposes plug-in outlets to support any game UI.',
+        publicUrl: 'https://timur.aboard.ru/casinoapp/',
+        stack: [
+            tech.ts,
+            tech.react,
+            tech.tailwind,
+            tech.turborepo,
+            tech.docker,
+        ],
+        image: '/images/projects/casinoapp.png',
+        slug: 'casinoapp',
+        features: [
+            {
+                title: 'Coinflip',
+                image: 'images/projects/casinoapp/coinflip.png',
+            },
+            {
+                title: 'Slots',
+                image: 'images/projects/casinoapp/slots.png',
+            },
+            {
+                title: 'Craps',
+                image: 'images/projects/casinoapp/craps.png',
             },
         ],
     },

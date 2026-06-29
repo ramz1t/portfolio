@@ -6,8 +6,17 @@ import CTAButton from './CTAButton.jsx'
 
 const ProjectCard = (props) => {
     const [open, setOpen] = useState(false)
-    const { name, year, gitUrl, publicUrl, stack, desc, image, hasMoreInfo } =
-        props
+    const {
+        name,
+        year,
+        gitUrl,
+        publicUrl,
+        stack,
+        desc,
+        image,
+        hasMoreInfo,
+        type,
+    } = props
 
     const buildActionButtons = () => {
         const buttons = []
@@ -81,7 +90,10 @@ const ProjectCard = (props) => {
             </a>
             <div className="flex flex-col gap-2 justify-between h-full max-h-fit">
                 <h3 className="text-2xl">{name}</h3>
-                <time className="text-slate-500">{year}</time>
+                <div>
+                    <p className="text-slate-700">{type}</p>
+                    <time className="text-slate-700">{year}</time>
+                </div>
                 <ul className="flex gap-3 flex-wrap">
                     {stack.map(({ icon }, key) => (
                         <li
@@ -92,7 +104,7 @@ const ProjectCard = (props) => {
                         </li>
                     ))}
                 </ul>
-                <p className="grow">{desc}</p>
+                <p className="grow leading-tight">{desc}</p>
                 <OuterDialog
                     data={props}
                     close={() => setOpen(false)}
