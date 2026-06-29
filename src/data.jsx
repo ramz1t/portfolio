@@ -68,8 +68,12 @@ export const educationAndExperience = [
         date: 'Sept 2024 - June 2027',
     },
     {
-        title: 'Software Engineer Intern, IKEA, Sweden',
-        date: 'Sept 2025 - Currently',
+        title: 'Software Engineer Intern, Ingka, Sweden',
+        date: 'Sept 2025 - May 2026',
+    },
+    {
+        title: 'Junior Software Engineer, Ingka Sweden',
+        date: 'June 2026 - Currently',
     },
 ]
 

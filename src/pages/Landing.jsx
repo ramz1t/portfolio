@@ -1,37 +1,50 @@
 import { useState } from 'react'
-import { HiPaperClip } from "react-icons/hi";
-import { IoMdArrowRoundDown } from "react-icons/io";
+import { HiPaperClip } from 'react-icons/hi'
+import { IoMdArrowRoundDown } from 'react-icons/io'
 import { navigate } from '../App.jsx'
-import CTAButton from '../components/CTAButton.jsx';
+import CTAButton from '../components/CTAButton.jsx'
 
 const Landing = () => {
     const [hover, setHover] = useState(false)
 
     return (
         <>
-            <section id="landing" className="bg-slate-200 text-primary-900 relative selection:bg-primary-900 selection:text-slate-200">
+            <section
+                id="landing"
+                className="bg-slate-200 text-primary-900 relative selection:bg-primary-900 selection:text-slate-200"
+            >
                 <div className="page-part gap-14 dual-section">
                     <div className="flex flex-col gap-5 lg:gap-7 w-full">
                         <h1 className="text-5xl leading-tight">
                             Hi, my name is Timur
-                            <br/>
-                            And I'm a Software Engineer
+                            <br />
+                            and I'm a Software Engineer
                         </h1>
                         <h2 className="text-xl">
-                            I like making products that are useful for people
+                            I like making products that are useful for people,
+                            <br />
+                            Currently at{' '}
+                            <a
+                                href="https://geshdo.com/"
+                                target="_blank"
+                                className="underline"
+                                rel="norefererrer"
+                            >
+                                GESHDO
+                            </a>
                         </h2>
                         <div className="flex gap-3">
-                            <CTAButton 
-                                icon={<HiPaperClip />} 
-                                title={"CV"}
+                            <CTAButton
+                                icon={<HiPaperClip />}
+                                title={'CV'}
                                 href={"/Timur Ramazanov's CV.pdf"}
-                                className={"!h-14 !w-fit px-7"}
+                                className={'!h-14 !w-fit px-7'}
                             />
-                            <CTAButton 
-                                title={"Contact me"}
-                                onClick={() => navigate("contacts")}
-                                style='secondary'
-                                className={"!h-14 !w-fit px-7"}
+                            <CTAButton
+                                title={'Contact me'}
+                                onClick={() => navigate('contacts')}
+                                style="secondary"
+                                className={'!h-14 !w-fit px-7'}
                             />
                         </div>
                     </div>
@@ -53,7 +66,10 @@ const Landing = () => {
                         />
                     </div>
                 </div>
-                <a onClick={() => navigate("ed_and_hobbies")} className="hidden hover:cursor-pointer md:block absolute transition-all duration-100 animate-bounce bottom-5 text-7xl pb-7 text-primary-900">
+                <a
+                    onClick={() => navigate('ed_and_hobbies')}
+                    className="hidden hover:cursor-pointer md:block absolute transition-all duration-100 animate-bounce bottom-5 text-7xl pb-7 text-primary-900"
+                >
                     <IoMdArrowRoundDown />
                 </a>
             </section>

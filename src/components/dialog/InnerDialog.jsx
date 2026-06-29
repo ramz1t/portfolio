@@ -48,7 +48,8 @@ export const InnerDialog = memo(({ data, close, className }) => {
             className={cn(
                 'max-h-[100dvh] min-h-[90dvh] max-md:min-h-[100dvh] md:max-h-[90dvh] ' +
                     'max-w-[100dvw] md:max-w-[85dvw] md:rounded-3xl bg-white ' +
-                    'overflow-y-auto w-full shadow-2xl flex flex-col',
+                    'overflow-y-auto w-full shadow-2xl flex flex-col ' +
+                    'selection:bg-primary-900 selection:text-white',
                 className
             )}
         >
@@ -66,13 +67,6 @@ export const InnerDialog = memo(({ data, close, className }) => {
                     className="leading-none"
                 >
                     {name}
-                </motion.p>
-
-                <motion.p
-                    style={{ opacity: yearOpacity }}
-                    className="text-gray-600 font-semibold text-lg md:text-2xl md:mt-[22px] ml-5"
-                >
-                    {year}
                 </motion.p>
 
                 <button

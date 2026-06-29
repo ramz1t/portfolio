@@ -6,7 +6,7 @@ const EdTimelineItem = ({ title, date }) => {
         <li className="relative mb-1.5">
             <div className="flex gap-3">
                 <div className="flex flex-col items-center">
-                    <p className="text-5xl leading-[0.5]">●</p>
+                    <p className="text-5xl leading-[0.5] select-none">●</p>
                     <div className="bg-white w-1 h-full rounded-b-full"></div>
                 </div>
                 <div className="pb-9">
