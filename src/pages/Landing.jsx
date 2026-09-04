@@ -25,7 +25,7 @@ const Landing = () => {
                             <br />
                             Currently at{' '}
                             <a
-                                href="https://geshdo.com/"
+                                href="https://geshdo.com/cv/timur-ramazanov"
                                 target="_blank"
                                 className="underline"
                                 rel="norefererrer"
