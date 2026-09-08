@@ -23,6 +23,7 @@ import {
     SiApacheairflow,
     SiKubernetes,
     SiTurborepo,
+    SiGithub,
 } from 'react-icons/si'
 import { VscMcp } from 'react-icons/vsc'
 import GithubIcon from './assets/github.svg'
@@ -68,6 +69,11 @@ export const tech = {
     kuber: { key: 'kuber', icon: <SiKubernetes />, title: 'k8s' },
     mcp: { key: 'mcp', icon: <VscMcp />, title: 'MCP' },
     turborepo: { key: 'turborepo', icon: <SiTurborepo />, title: 'Turborepo' },
+    github_actions: {
+        key: 'github_actions',
+        icon: <SiGithub />,
+        title: 'Github Actions',
+    },
 }
 
 export const educationAndExperience = [
@@ -92,12 +98,29 @@ export const educationAndExperience = [
     {
         title: 'Software Engineer Intern, Ingka, Sweden',
         date: 'Sept 2025 - May 2026',
-        skills: ['python', 'docker', 'gcp', 'kafka', 'fastapi', 'sqlalchemy'],
+        skills: [
+            'python',
+            'docker',
+            'gcp',
+            'kafka',
+            'fastapi',
+            'sqlalchemy',
+            'github_actions',
+        ],
     },
     {
         title: 'Junior Software Engineer, Ingka, Sweden',
         date: 'June 2026 - Currently',
-        skills: ['python', 'ts', 'docker', 'mcp', 'airflow', 'kuber', 'gcp'],
+        skills: [
+            'python',
+            'ts',
+            'docker',
+            'mcp',
+            'airflow',
+            'kuber',
+            'gcp',
+            'github_actions',
+        ],
     },
 ]
 
@@ -130,6 +153,7 @@ export const stack = [
             tech.airflow,
             tech.mcp,
             tech.turborepo,
+            tech.github_actions,
         ],
     },
 ]
