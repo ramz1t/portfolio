@@ -4,10 +4,13 @@ import { projects } from '../data'
 
 const Projects = () => {
     return (
-        <section id="projects" className="text-primary-900 selection:bg-primary-900 selection:text-white">
+        <section
+            id="projects"
+            className="text-primary-900 selection:bg-primary-900 selection:text-white"
+        >
             <div className="page-part">
                 <h2 className="text-5xl pb-7 text-left">Projects</h2>
-                <ul className="grid xl:grid-cols-2 gap-14 max-md:max-w-xs md:w-10/12 lg:w-8/12 xl:w-full mx-auto">
+                <ul className="grid xl:grid-cols-2 gap-14 md:w-10/12 lg:w-8/12 xl:w-full mx-auto">
                     {projects.map((project, key) => (
                         <ProjectCard
                             key={key}

@@ -80,7 +80,7 @@ const ProjectCard = (props) => {
     }
 
     return (
-        <li className="grid md:grid-cols-[2fr_1fr] gap-7 border-2 border-primary-900 rounded-2xl p-5 md:p-7 items-center h-full">
+        <li className="grid md:grid-cols-[2fr_1fr] gap-7 border-2 border-primary-900 rounded-3xl p-5 md:p-7 items-center h-full">
             <a
                 href={publicUrl}
                 target="_blank"
