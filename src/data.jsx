@@ -243,18 +243,13 @@ export const links = [
 export const hobbies = [
     {
         name: 'Skiing and hiking',
-        url: './images/skiing.jpg',
-        alt: 'photo of me skiing in kavkaz moutnains, person on front, danger sign behind',
-    },
-    {
-        name: 'Coding',
-        url: './images/coding.jpg',
-        alt: 'photo of a table with two monitors, ipad on front, code on the first monitor, spotify and cmd on the second monitor',
+        slug: 'skiing_hiking',
+        count: 3,
     },
     {
         name: 'Drone photography',
-        url: './images/drone.jpg',
-        alt: 'photo of night Moscow shot from drone, 40 floor building in the center, roads with bright lights around',
+        slug: 'drone',
+        count: 3,
     },
 ]
 
