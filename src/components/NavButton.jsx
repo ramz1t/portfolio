@@ -4,16 +4,16 @@ import { BsCircleFill } from 'react-icons/bs'
 import { navigate } from '../App.jsx'
 
 const NavButton = ({ text, blockId, init, onClick }) => {
-    const [activeSection, setActiveSection] = useState(init)
+    const [isActive, setIsActive] = useState(init)
 
     useEffect(() => {
         const handleScroll = (e) => {
             const elem = document.getElementById(blockId)
             const rect = elem.getBoundingClientRect()
             if (rect.top <= 0 && rect.bottom > 0) {
-                setActiveSection(true)
+                setIsActive(true)
             } else {
-                setActiveSection(false)
+                setIsActive(false)
             }
         }
         window.addEventListener('scroll', handleScroll)
@@ -29,7 +29,11 @@ const NavButton = ({ text, blockId, init, onClick }) => {
                 onClick()
             }}
         >
-            {activeSection && <BsCircleFill className="w-3 h-3" />}
+            <BsCircleFill
+                className={`${
+                    isActive ? 'opacity-100' : 'opacity-0'
+                } transition-all w-3 h-3`}
+            />
             {text}
         </a>
     )
