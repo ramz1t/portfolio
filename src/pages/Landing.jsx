@@ -73,7 +73,7 @@ const Landing = () => {
                 >
                     <IoMdArrowRoundDown />
                 </a>
-                <div className="bg-slate-900 h-5 w-full absolute bottom-0"></div>
+                <div className="bg-slate-900 h-5 w-full absolute bottom-0 hidden md:block"></div>
             </section>
         </>
     )

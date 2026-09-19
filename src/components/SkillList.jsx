@@ -47,16 +47,16 @@ const SkillList = ({ hoveredSkills = [] }) => {
                         </ul>
                     </li>
                 ))}
-                <li>
+                <li className="w-full">
                     <h3 className="text-xl text-slate-400 pb-3 flex items-center gap-2">
                         <PiCertificateFill /> Certificates
                     </h3>
-                    <ul className="grid md:grid-cols2 gap-3 ">
+                    <ul className="grid md:grid-cols-2 gap-3 ">
                         {certificates.map((cert, key) => {
                             return (
                                 <li key={key}>
                                     <a
-                                        className="flex gap-5 border-2 border-white rounded-3xl py-3 px-5 w-fit hover:scale-105 transition-all duration-150 group"
+                                        className="flex gap-5 border-2 border-white rounded-3xl py-3 px-5 w-full hover:scale-105 transition-all duration-150 group"
                                         style={{
                                             boxShadow: `0px 0px 20px rgba(255, 255, 255, 0.3)`,
                                             transition:
