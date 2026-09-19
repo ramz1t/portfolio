@@ -257,7 +257,7 @@ export const projects = [
     {
         id: 1,
         name: 'Diary',
-        type: 'Passion project',
+        type: 'Pet Project',
         year: '2022',
         model: 'model.gltf',
         gitUrl: 'https://github.com/ramz1t/Diary',
@@ -289,7 +289,7 @@ export const projects = [
     {
         id: 2,
         name: 'CreditHelper',
-        type: 'Passion project',
+        type: 'Pet Project',
         year: '2022',
         model: 'model.gltf',
         gitUrl: 'https://github.com/ramz1t/CreditHelper_frontend',
@@ -316,7 +316,7 @@ export const projects = [
     {
         id: 4,
         name: 'Grocket',
-        type: 'Passion project',
+        type: 'Pet Project',
         year: '2023 - 2024',
         model: 'model.gltf',
         gitUrl: 'https://github.com/ramz1t/Grocket',
@@ -363,7 +363,7 @@ export const projects = [
     {
         id: 6,
         name: 'Tic Tac Toe',
-        type: 'Passion project',
+        type: 'Pet Project',
         year: '2023',
         model: 'model.gltf',
         gitUrl: 'https://github.com/ramz1t/tictactoe',
@@ -391,7 +391,7 @@ export const projects = [
     {
         id: 8,
         name: 'Collabra',
-        type: 'Passion project',
+        type: 'Pet Project',
         year: '2024 - Now',
         model: 'model.gltf',
         gitUrl: 'https://github.com/ramz1t/collabra',
@@ -453,7 +453,7 @@ export const projects = [
     {
         id: 10,
         name: 'CasinoApp',
-        type: 'Uni project',
+        type: 'Uni Project',
         year: '2026',
         model: 'model.gltf',
         gitUrl: 'https://github.com/ramz1t/hkr-fullstack',
@@ -484,5 +484,15 @@ export const projects = [
                 image: 'images/projects/casinoapp/craps.png',
             },
         ],
+    },
+]
+
+export const certificates = [
+    {
+        title: 'Associate Cloud Engineer',
+        org: 'Google Cloud Platform',
+        year: 2026,
+        logo: tech.gcp,
+        link: 'https://www.credly.com/badges/1308ba6b-f3a9-4d68-b1bc-3b953ac1b84c',
     },
 ]

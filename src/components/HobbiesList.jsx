@@ -21,7 +21,7 @@ const Carousel = ({ count, slug }) => {
 
     return (
         <div
-            className="rounded-2xl hover:scale-105 transition-all border-2 relative overflow-hidden group"
+            className="rounded-3xl hover:scale-105 transition-all border-2 relative overflow-hidden group"
             style={{
                 boxShadow: `0px 0px 20px rgba(255, 255, 255, 0.3)`,
             }}
@@ -67,14 +67,6 @@ const HobbiesList = () => {
             <ul className="grid grid-cols-2 gap-5">
                 {hobbies.map((el, key) => (
                     <li className="flex flex-col gap-3" key={key}>
-                        {/* <img
-                            className="w-full border-2 rounded-2xl hover:scale-105 transition-all duration-150"
-                            src={el.url}
-                            alt={el?.alt}
-                            style={{
-                                boxShadow: `0px 0px 20px rgba(255, 255, 255, 0.3)`,
-                            }}
-                        /> */}
                         <Carousel slug={el.slug} count={el.count} />
                         <h3 className="text-2xl pl-3">{el.name}</h3>
                     </li>
