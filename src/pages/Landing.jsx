@@ -31,7 +31,8 @@ const Landing = () => {
                                 rel="norefererrer"
                             >
                                 GESHDO
-                            </a>
+                            </a>{' '}
+                            and Ingka Group Digital
                         </h2>
                         <div className="flex gap-3">
                             <CTAButton
@@ -68,10 +69,11 @@ const Landing = () => {
                 </div>
                 <a
                     onClick={() => navigate('ed_and_hobbies')}
-                    className="hidden hover:cursor-pointer md:block absolute transition-all duration-100 animate-bounce bottom-5 text-7xl pb-7 text-primary-900"
+                    className="hidden hover:cursor-pointer md:block absolute transition-all duration-100 animate-bounce bottom-5 text-7xl pb-7 text-slate-900"
                 >
                     <IoMdArrowRoundDown />
                 </a>
+                <div className="bg-slate-900 h-5 w-full absolute bottom-0"></div>
             </section>
         </>
     )
