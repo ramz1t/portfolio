@@ -1,125 +1,139 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Projects and links by Timur Ramazanov." />
     <title>Ramz1 Projects</title>
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-        background-color: #f5f7fa;
-        color: #333;
-        margin: 0;
-        padding: 40px;
-        max-width: 800px;
-        margin-left: auto;
-        margin-right: auto;
-      }
-
-      h1 {
-        color: #2c3e50;
-        font-size: 2.5em;
-        margin-bottom: 0.2em;
-      }
-
-      h2 {
-        color: #34495e;
-        margin-top: 1.5em;
-        border-bottom: 2px solid #ccc;
-        padding-bottom: 0.3em;
-      }
-
-      ul {
-        list-style-type: none;
-        padding-left: 0;
-      }
-
-      li {
-        margin: 0.5em 0;
-      }
-
-      a {
-        color: #3498db;
-        text-decoration: none;
-        font-weight: bold;
-      }
-
-      a:hover {
-        text-decoration: underline;
-      }
-
-      .year {
-        display: inline-block;
-        width: 60px;
-        margin-right: 10px;
-        font-weight: bold;
-        color: #555;
-      }
-
-      .card {
-        background: #fff;
-        border: 1px solid #ddd;
-        border-radius: 8px;
-        padding: 16px;
-        margin-bottom: 10px;
-        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-      }
-
-      footer {
-        margin-top: 20px;
-        text-align: center;
-        font-size: 14px;
-        color: #777;
-        border-top: 2px solid #ccc;
-        padding-top: 20px;
-      }
-
-      .yellow {
-        color: #f39c12;
-      }
-
-      .blue {
-        color: #2980b9;
-      }
-    </style>
+    <link rel="stylesheet" href="/style.css" />
   </head>
   <body>
-    <h1>Ramz1's project hub</h1>
-    <h2>About me</h2>
-    <ul>
-      <li><a href="https://ramz1.onrender.com">Portfolio page</a></li>
-      <li><a href="https://www.linkedin.com/in/ramz1/">LinkedIn</a></li>
-      <li><a href="mailto:timurram007@gmail.com">Email</a></li>
-    </ul>
-    <h2>Available apps</h2>
-    <ul>
-      <li class="card">
-        <a href="/casinoapp/"
-          ><span class="year">2026</span> CasinoApp - Online casino with full
-          transparency</a
-        >
-      </li>
-      <li class="card">
-        <a href="/collabra/"
-          ><span class="year">2024</span> Collabra - Task and team management
-          tool</a
-        >
-      </li>
-      <li class="card">
-        <a href="/grocket/"
-          ><span class="year">2023</span> Grocket - Online marketplace</a
-        >
-      </li>
-      <li class="card">
-        <a href="/credit-helper/"
-          ><span class="year">2022</span> Credit Helper - Credit comparison
-          tool</a
-        >
-      </li>
-    </ul>
+    <main class="container">
+      <section class="command-section">
+        <p class="output" id="last_login"></p>
+        <script>
+          const loginParts = Object.fromEntries(
+            new Intl.DateTimeFormat("en-US", {
+              weekday: "short",
+              month: "short",
+              day: "numeric",
+              year: "numeric",
+              hour: "2-digit",
+              minute: "2-digit",
+              second: "2-digit",
+              hourCycle: "h23",
+            })
+              .formatToParts(new Date())
+              .map(({ type, value }) => [type, value])
+          );
+          last_login.textContent = `Last login: ${loginParts.weekday} ${loginParts.month} ${loginParts.day} ${loginParts.hour}:${loginParts.minute}:${loginParts.second} ${loginParts.year} on tty1`;
+        </script>
+      </section>
+      <section class="command-section" aria-labelledby="whoami-command">
+        <h1 class="command" id="whoami-command">
+          <span class="prompt">$</span> whoami
+        </h1>
+        <p class="output">ramz1</p>
+      </section>
 
-    <footer>
-      <span class="yellow">Timur</span>
-      <span class="blue">Ramazanov</span>, <span class="yellow">Malmo</span>
-      <span class="blue">Sweden</span>
-    </footer>
+      <section class="command-section" aria-labelledby="pwd-command">
+        <h2 class="command" id="pwd-command">
+          <span class="prompt">$</span> pwd
+        </h2>
+        <p class="output">/home</p>
+      </section>
+
+      <section class="command-section" aria-labelledby="links-command">
+        <h2 class="command" id="links-command">
+          <span class="prompt">$</span> ls links
+        </h2>
+        <nav aria-label="Links">
+          <ul class="link-list">
+            <li><a href="https://ramz1.vercel.app">portfolio</a></li>
+            <li><a href="https://www.linkedin.com/in/ramz1/">linkedin</a></li>
+            <li><a href="https://github.com/ramz1t">github</a></li>
+            <li><a href="mailto:timurram007@gmail.com">email</a></li>
+          </ul>
+        </nav>
+      </section>
+
+      <section class="command-section" aria-labelledby="deployments-command">
+        <h2 class="command" id="deployments-command">
+          <span class="prompt">$</span> ls -l deployments
+        </h2>
+        <ul
+          class="deployment-list"
+          aria-label="Permissions, links, owner, group, size, year, and name"
+        >
+          <li>total 4</li>
+          <li>
+            <a
+              class="deployment-row"
+              href="/casinoapp/"
+              aria-label="Open casinoapp deployment"
+            >
+              <span aria-hidden="true">drwxr-xr-x</span>
+              <span aria-hidden="true">2</span>
+              <span aria-hidden="true">ramz1</span>
+              <span aria-hidden="true">staff</span>
+              <span aria-hidden="true">4.0K</span>
+              <span aria-hidden="true">2026</span>
+              <span aria-hidden="true">casinoapp/</span>
+            </a>
+          </li>
+          <li>
+            <a
+              class="deployment-row"
+              href="/collabra/"
+              aria-label="Open collabra deployment"
+            >
+              <span aria-hidden="true">drwxr-xr-x</span>
+              <span aria-hidden="true">2</span>
+              <span aria-hidden="true">ramz1</span>
+              <span aria-hidden="true">staff</span>
+              <span aria-hidden="true">4.0K</span>
+              <span aria-hidden="true">2024</span>
+              <span aria-hidden="true">collabra/</span>
+            </a>
+          </li>
+          <li>
+            <a
+              class="deployment-row"
+              href="/grocket/"
+              aria-label="Open grocket deployment"
+            >
+              <span aria-hidden="true">drwxr-xr-x</span>
+              <span aria-hidden="true">2</span>
+              <span aria-hidden="true">ramz1</span>
+              <span aria-hidden="true">staff</span>
+              <span aria-hidden="true">4.0K</span>
+              <span aria-hidden="true">2023</span>
+              <span aria-hidden="true">grocket/</span>
+            </a>
+          </li>
+          <li>
+            <a
+              class="deployment-row"
+              href="/credit-helper/"
+              aria-label="Open credit-helper deployment"
+            >
+              <span aria-hidden="true">drwxr-xr-x</span>
+              <span aria-hidden="true">2</span>
+              <span aria-hidden="true">ramz1</span>
+              <span aria-hidden="true">staff</span>
+              <span aria-hidden="true">4.0K</span>
+              <span aria-hidden="true">2022</span>
+              <span aria-hidden="true">credit-helper/</span>
+            </a>
+          </li>
+        </ul>
+      </section>
+      <section class="command-section">
+        <h2 class="command" id="pwd-command">
+          <span class="prompt">$</span> <span class="shell-cursor"></span>
+        </h2>
+      </section>
+    </main>
+    <footer>Timur Ramazanov, Malmö, Sweden</footer>
   </body>
 </html>
