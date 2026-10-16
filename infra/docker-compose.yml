@@ -13,13 +13,7 @@ services:
     volumes:
       - ./global.conf:/etc/nginx/conf.d/default.conf
       - ./certs:/etc/nginx/certs
-      - ./404.html:/usr/share/nginx/html/404.html
-      - ./index.html:/usr/share/nginx/html/index.html
-      - ./style.css:/usr/share/nginx/html/style.css
-      - ./map.jpg:/usr/share/nginx/html/map.jpg
-      - ./cursor-xp-arrow.svg:/usr/share/nginx/html/cursor-xp-arrow.svg
-      - ./cursor-xp-hand.svg:/usr/share/nginx/html/cursor-xp-hand.svg
-      - ./sweden-pixel.svg:/usr/share/nginx/html/sweden-pixel.svg
+      - ./site:/usr/share/nginx/html:ro
     networks:
       - bridge-net
 
