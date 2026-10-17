@@ -24,6 +24,7 @@ import {
     SiKubernetes,
     SiTurborepo,
     SiGithub,
+    SiLinux,
 } from 'react-icons/si'
 import { VscMcp } from 'react-icons/vsc'
 import GithubIcon from './assets/github.svg'
@@ -74,6 +75,7 @@ export const tech = {
         icon: <SiGithub />,
         title: 'Github Actions',
     },
+    linux: { key: 'linux', icon: <SiLinux />, title: 'Linux' },
 }
 
 export const educationAndExperience = [
@@ -253,6 +255,13 @@ export const hobbies = [
     },
 ]
 
+export const Role = Object.freeze({
+    FRONTEND: 'Frontend',
+    BACKEND: 'Backend',
+    INFRA: 'Infra',
+    MOBILE: 'Mobile',
+})
+
 export const projects = [
     {
         id: 1,
@@ -264,6 +273,7 @@ export const projects = [
         desc: 'School online diary service for students and teachers',
         publicUrl: null,
         stack: [tech.python, tech.fastapi, tech.sqlalchemy, tech.js],
+        roles: [Role.BACKEND, Role.FRONTEND],
         image: '/images/projects/diary/index.png',
         descFull:
             'Diary is a web-based diary platform designed for schools. It features an admin panel for managing schedules, groups, teachers, and updating data. Teachers can assign homework, manage semester and final grades, while students view their information in a clear and user-friendly interface. This project was my first attempt at building a fullstack application using FastAPI, vanilla JavaScript, and SQLAlchemy. It helped me understand backend APIs, frontend integration, and database interaction while solving real-world educational workflow needs in a structured way.\n',
@@ -296,6 +306,7 @@ export const projects = [
         desc: 'Service for credits comparison and managment',
         publicUrl: 'https://timur.aboard.ru/credit-helper/',
         stack: [tech.js, tech.react, tech.python, tech.postgresql],
+        roles: [Role.FRONTEND],
         image: '/images/projects/credit.png',
         slug: 'credit',
         features: [],
@@ -309,6 +320,7 @@ export const projects = [
         gitUrl: 'https://github.com/ramz1t/PersonalPage',
         desc: 'My developer personal portfolio, you are here now :)',
         stack: [tech.js, tech.react, tech.tailwind],
+        roles: [Role.FRONTEND],
         image: '/images/projects/ramz1.png',
         slug: 'personal-page',
         features: [],
@@ -323,6 +335,7 @@ export const projects = [
         desc: 'International online marketplace for secondhand items',
         publicUrl: 'https://timur.aboard.ru/grocket/',
         stack: [tech.react, tech.tailwind, tech.docker, tech.nginx],
+        roles: [Role.FRONTEND, Role.INFRA],
         image: '/images/projects/grocket/index.png',
         slug: 'grocket',
         descFull:
@@ -356,6 +369,7 @@ export const projects = [
         desc: 'Photographer portfolio for Simon Kuleshov',
         publicUrl: 'https://simon-kuleshov.onrender.com/',
         stack: [tech.js, tech.react, tech.tailwind],
+        roles: [Role.FRONTEND],
         image: '/images/projects/simon.png',
         slug: 'ph-portfolio',
         features: [],
@@ -370,6 +384,7 @@ export const projects = [
         desc: 'Tic Tac Toe game made with Swift and SwiftUI',
         publicUrl: null,
         stack: [tech.swift, tech.swiftui],
+        roles: [Role.MOBILE],
         image: '/images/projects/tictactoe.png',
         slug: 'tictactoe',
         features: [],
@@ -384,6 +399,7 @@ export const projects = [
         desc: 'Video editor portfolio for Anton Martynov',
         publicUrl: 'https://martynov.onrender.com/',
         stack: [tech.js, tech.react, tech.tailwind],
+        roles: [Role.FRONTEND],
         image: '/images/projects/anton.png',
         slug: 'video-portfolio',
         features: [],
@@ -400,6 +416,7 @@ export const projects = [
             'Collabra is my flagship project - a collaborative project management platform inspired by tools like Jira, focused on task tracking, team management, deadlines, and extensible workflows, with additional features planned. It implements modern frontend best practices and a fully custom design system built from the ground up. I was responsible for the full deployment on my own server, including reverse proxy configuration, and I also designed and implemented the complete backend for tasks and tagging.',
         publicUrl: 'https://timur.aboard.ru/collabra/',
         stack: [tech.ts, tech.react, tech.tailwind, tech.django, tech.python],
+        roles: [Role.FRONTEND, Role.BACKEND, Role.INFRA],
         image: '/images/projects/collabra.png',
         slug: 'collabra',
         features: [
@@ -433,6 +450,7 @@ export const projects = [
             'In this project I connected Sanity CMS to make it easier to maintain the project and update content swifty. This let me pre-define multiple layout templates so that each project is represented in best possible matter. Examples are below',
         publicUrl: 'https://viktorpavlenko.vercel.app/',
         stack: [tech.ts, tech.tailwind, tech.next, tech.sanity],
+        roles: [Role.FRONTEND],
         image: '/images/projects/viktor.png',
         slug: 'viktor',
         features: [
@@ -468,6 +486,7 @@ export const projects = [
             tech.turborepo,
             tech.docker,
         ],
+        roles: [Role.FRONTEND, Role.BACKEND],
         image: '/images/projects/casinoapp.png',
         slug: 'casinoapp',
         features: [
@@ -484,6 +503,21 @@ export const projects = [
                 image: 'images/projects/casinoapp/craps.png',
             },
         ],
+    },
+    {
+        id: 11,
+        name: 'Project hub',
+        type: 'Pet Project',
+        year: '2026',
+        model: 'model.gltf',
+        gitUrl: 'https://github.com/ramz1t/portfolio/tree/three/infra',
+        desc: 'Docker Compose container orchestration, Nginx L7 ALB',
+        publicUrl: 'https://timur.aboard.ru',
+        stack: [tech.linux, tech.docker, tech.nginx],
+        roles: [Role.INFRA],
+        image: '/images/projects/dev_hub.png',
+        slug: 'project_hub',
+        features: [],
     },
 ]
 
