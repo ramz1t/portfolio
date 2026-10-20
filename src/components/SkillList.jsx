@@ -18,25 +18,14 @@ const SkillList = ({ hoveredSkills = [] }) => {
                                 )
                                 return (
                                     <li
-                                        className="flex items-center gap-5 border-2 border-white rounded-full py-3 px-5 w-fit hover:scale-105 hover:cursor-default transition-all duration-150 group"
+                                        className="shadow-[0_0_20px_rgba(255,255,255,0.3)] hover:shadow-[0_0_25px_rgba(255,255,255,0.35)] flex items-center gap-5 border-2 border-white rounded-full py-3 px-5 w-fit hover:scale-105 hover:cursor-default transition-all duration-150 group"
                                         style={{
-                                            boxShadow: `0px 0px 20px rgba(255, 255, 255, 0.3)`,
-                                            transition:
-                                                'transform 150ms, box-shadow 150ms, opacity 150ms',
                                             opacity:
                                                 hoveredSkills.length === 0 ||
                                                 isHighlighted
                                                     ? '1'
                                                     : '0.1',
                                         }}
-                                        onMouseEnter={(e) =>
-                                            (e.currentTarget.style.boxShadow =
-                                                '0px 0px 25px rgba(255, 255, 255, 0.35)')
-                                        }
-                                        onMouseLeave={(e) =>
-                                            (e.currentTarget.style.boxShadow =
-                                                '0px 0px 20px rgba(255, 255, 255, 0.3)')
-                                        }
                                         key={key}
                                     >
                                         {skill.icon}
@@ -56,20 +45,7 @@ const SkillList = ({ hoveredSkills = [] }) => {
                             return (
                                 <li key={key}>
                                     <a
-                                        className="flex gap-5 border-2 border-white rounded-3xl py-3 px-5 w-full hover:scale-105 transition-all duration-150 group"
-                                        style={{
-                                            boxShadow: `0px 0px 20px rgba(255, 255, 255, 0.3)`,
-                                            transition:
-                                                'transform 150ms, box-shadow 150ms, opacity 150ms',
-                                        }}
-                                        onMouseEnter={(e) =>
-                                            (e.currentTarget.style.boxShadow =
-                                                '0px 0px 25px rgba(255, 255, 255, 0.35)')
-                                        }
-                                        onMouseLeave={(e) =>
-                                            (e.currentTarget.style.boxShadow =
-                                                '0px 0px 20px rgba(255, 255, 255, 0.3)')
-                                        }
+                                        className="shadow-[0_0_20px_rgba(255,255,255,0.3)] hover:shadow-[0_0_25px_rgba(255,255,255,0.35)] flex gap-5 border-2 border-white rounded-3xl py-3 px-5 w-full hover:scale-105 transition-all duration-150 group !ring-white !ring-offset-primary-900"
                                         href={cert.link}
                                         target="_blank"
                                     >

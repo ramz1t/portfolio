@@ -71,7 +71,7 @@ export const InnerDialog = memo(({ data, close, className }) => {
 
                 <button
                     onClick={close}
-                    className="text-4xl p-1.5 ml-auto hover:scale-105 transition-transform"
+                    className="text-4xl p-1.5 ml-auto hover:scale-105 transition-[box-shadow,transform]"
                 >
                     <IoClose />
                 </button>

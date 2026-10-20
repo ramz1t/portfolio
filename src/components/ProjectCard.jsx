@@ -84,7 +84,7 @@ const ProjectCard = (props) => {
             <a
                 href={publicUrl}
                 target="_blank"
-                className="rounded-xl border hover:scale-[1.01] transition-all duration-150 overflow-hidden h-fit focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-900 focus-visible:ring-offset-2"
+                className="rounded-xl border hover:scale-[1.01] transition-all duration-150 overflow-hidden h-fit"
             >
                 <img src={image} className="" alt={name} />
             </a>

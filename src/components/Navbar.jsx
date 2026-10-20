@@ -33,7 +33,7 @@ const Navbar = () => {
                     className="flex container mx-auto justify-between items-center p-5"
                     id="logo-icon"
                 >
-                    <a onClick={() => navigate("landing")}>
+                    <a onClick={() => navigate('landing')}>
                         <img
                             src={logo}
                             className="text-2xl w-10 h-10 text-primary-900 cursor-pointer"
@@ -52,6 +52,7 @@ const Navbar = () => {
                             color="#03045e"
                             toggled={open}
                             toggle={setOpen}
+                            className="rounded-md"
                         />
                     </span>
                 </div>
@@ -69,6 +70,7 @@ const Navbar = () => {
                         color="#03045e"
                         toggled={open}
                         toggle={setOpen}
+                        className="roudned-md"
                     />
                 </span>
                 {buttons.map((button, key) => (

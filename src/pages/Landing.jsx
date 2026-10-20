@@ -27,7 +27,7 @@ const Landing = () => {
                             <a
                                 href="https://geshdo.com/cv/timur-ramazanov"
                                 target="_blank"
-                                className="underline"
+                                className="underline decoration-2 underline-offset-4 rounded-md ring-offset-slate-200"
                                 rel="norefererrer"
                             >
                                 GESHDO
@@ -39,13 +39,17 @@ const Landing = () => {
                                 icon={<HiPaperClip />}
                                 title={'CV'}
                                 href={"/Timur Ramazanov's CV.pdf"}
-                                className={'!h-14 !w-fit px-7'}
+                                className={
+                                    '!h-14 !w-fit px-7 ring-offset-slate-200'
+                                }
                             />
                             <CTAButton
                                 title={'Contact me'}
                                 onClick={() => navigate('contacts')}
                                 style="secondary"
-                                className={'!h-14 !w-fit px-7'}
+                                className={
+                                    '!h-14 !w-fit px-7 ring-offset-slate-200'
+                                }
                             />
                         </div>
                     </div>

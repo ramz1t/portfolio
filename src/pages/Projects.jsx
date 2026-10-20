@@ -5,11 +5,20 @@ import { projects, Role } from '../data'
 const Projects = () => {
     const [selectedRole, setSelectedRole] = useState(null)
 
+    const allRolesKeys = [null, ...Object.keys(Role)]
     const getFilteredProjects = (role) =>
         role
             ? projects.filter((proj) => proj.roles.includes(Role[role]))
             : projects
-    const getProjectCount = (role) => getFilteredProjects(role).length
+    const countPerRole = useMemo(() => {
+        return allRolesKeys.reduce(
+            (prev, role) => ({
+                ...prev,
+                [role]: getFilteredProjects(role).length,
+            }),
+            {}
+        )
+    }, [projects])
 
     useEffect(() => {
         const handleEvent = (e) => e.key === 'Escape' && setSelectedRole(null)
@@ -25,8 +34,10 @@ const Projects = () => {
             <div className="page-part grow">
                 <h2 className="text-5xl pb-7 text-left">Projects</h2>
                 <ul className="flex gap-3 mb-7">
-                    {[null, ...Object.keys(Role)]
-                        .sort((role) => -getProjectCount(role))
+                    {allRolesKeys
+                        .sort((role1, role2) =>
+                            countPerRole[role1] < countPerRole[role2] ? 1 : -1
+                        )
                         .map((key) => (
                             <li key={Role[key]}>
                                 <button
@@ -34,7 +45,7 @@ const Projects = () => {
                                         key === selectedRole
                                             ? 'bg-primary-900 text-white'
                                             : ''
-                                    } rounded-full py-3 px-5 w-fit hover:scale-105 hover:cursor-default transition-all duration-150`}
+                                    } rounded-full py-3 px-5 w-fit hover:scale-105 ease-in-out whitespace-nowrap overflow-hidden hover:cursor-default`}
                                     onClick={() =>
                                         setSelectedRole((prevRole) =>
                                             prevRole === key ? null : key
@@ -46,7 +57,7 @@ const Projects = () => {
                                             ? Role[key]
                                             : 'All'}
                                     </span>
-                                    <span>({getProjectCount(key)})</span>
+                                    <span>({countPerRole[key]})</span>
                                 </button>
                             </li>
                         ))}

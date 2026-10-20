@@ -8,25 +8,38 @@ const CTAButton = ({
     style = 'primary',
     onClick,
     className,
-    type
+    type,
+    disabled = false,
 }) => {
     const Tag = href ? 'a' : 'button'
 
     const baseClasses =
         'flex items-center justify-center h-10 rounded-xl overflow-hidden px-4 gap-3 w-full border-2 border-primary-900 ' +
-        'transition-all duration-150 ease-in-out whitespace-nowrap focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-900 focus-visible:ring-offset-2'
+        'transition-all duration-150 ease-in-out whitespace-nowrap'
 
     const styleClasses =
         style === 'primary'
             ? 'bg-primary-900 hover:scale-105 text-slate-50 '
             : 'text-primary-900 hover:text-slate-50 before:h-0 hover:before:h-full relative isolate before:w-full before:absolute before:left-0 before:bottom-0 before:-z-10 before:transition-all before:duration-150 before:bg-primary-900 bg-transparent'
 
+    const disabledClasses = disabled
+        ? '!bg-gray-500 !border-gray-500 cursor-not-allowed'
+        : ''
+
     return (
         <Tag
-            className={cn(baseClasses, styleClasses, className)}
+            className={cn(
+                baseClasses,
+                styleClasses,
+                disabledClasses,
+                className
+            )}
             href={href}
             target={href ? '_blank' : undefined}
-            onClick={onClick}
+            onClick={() => {
+                if (disabled) return
+                onClick()
+            }}
             type={!href && type ? type : undefined}
         >
             {icon && (

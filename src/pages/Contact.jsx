@@ -8,46 +8,49 @@ const Contact = () => {
     const nameRef = useRef()
     const subjectRef = useRef()
     const messageRef = useRef()
-    const [formState, setFormState] = useState('')
+    const [formState, setFormState] = useState('init')
+    const isDisabled = formState === 'pending'
 
     const API_URL = import.meta.env.VITE_RELAY_URL ?? 'http://localhost/bot'
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        setFormState('')
+        if (isDisabled) return
         const name = nameRef.current.value
         const subject = subjectRef.current.value
         const message = messageRef.current.value
 
-        if (name !== '' && subject !== '' && message !== '') {
-            const conn =
-                navigator.connection ||
-                navigator.mozConnection ||
-                navigator.webkitConnection
-            const meta = {
-                userAgent: navigator.userAgent,
-                language: `${navigator.language} (${navigator.languages?.join(
-                    ', '
-                )})`,
-                platform: navigator.platform,
-                screen: `${screen.width}x${screen.height} @ ${window.devicePixelRatio}x, ${screen.colorDepth}-bit`,
-                viewport: `${window.innerWidth}x${window.innerHeight}`,
-                timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
-                localTime: new Date().toLocaleString(),
-                connection: conn
-                    ? `${conn.effectiveType}, ~${conn.downlink} Mbps`
-                    : 'unknown',
-                pageUrl: window.location.href,
-                referrer: document.referrer || 'direct',
-                cookiesEnabled: navigator.cookieEnabled,
-                online: navigator.onLine,
-            }
+        if (name === '' || subject === '' || message === '') return
 
-            axios
-                .post(`${API_URL}/send`, { name, subject, message, meta })
-                .then(() => setFormState('sent'))
-                .catch(() => setFormState('error'))
+        setFormState('pending')
+
+        const conn =
+            navigator.connection ||
+            navigator.mozConnection ||
+            navigator.webkitConnection
+        const meta = {
+            userAgent: navigator.userAgent,
+            language: `${navigator.language} (${navigator.languages?.join(
+                ', '
+            )})`,
+            platform: navigator.platform,
+            screen: `${screen.width}x${screen.height} @ ${window.devicePixelRatio}x, ${screen.colorDepth}-bit`,
+            viewport: `${window.innerWidth}x${window.innerHeight}`,
+            timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
+            localTime: new Date().toLocaleString(),
+            connection: conn
+                ? `${conn.effectiveType}, ~${conn.downlink} Mbps`
+                : 'unknown',
+            pageUrl: window.location.href,
+            referrer: document.referrer || 'direct',
+            cookiesEnabled: navigator.cookieEnabled,
+            online: navigator.onLine,
         }
+
+        axios
+            .post(`${API_URL}/send`, { name, subject, message, meta })
+            .then(() => setFormState('sent'))
+            .catch(() => setFormState('error'))
     }
 
     return (
@@ -101,13 +104,22 @@ const Contact = () => {
                                 Sent
                             </p>
                         )}
-                        {formState === '' && (
+                        {formState !== 'sent' && (
                             <CTAButton
                                 title={
-                                    formState === 'error' ? 'Re-Send' : 'Send'
+                                    formState === 'init'
+                                        ? 'Send'
+                                        : formState === 'pending'
+                                        ? 'Sending'
+                                        : formState === 'error'
+                                        ? 'Resend'
+                                        : ''
                                 }
                                 type={'submit'}
-                                className={'!w-fit !h-12 px-7'}
+                                className={
+                                    '!w-fit !h-12 px-7 ring-offset-slate-300'
+                                }
+                                disabled={isDisabled}
                             />
                         )}
                     </div>
