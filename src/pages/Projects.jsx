@@ -33,7 +33,7 @@ const Projects = () => {
         >
             <div className="page-part grow">
                 <h2 className="text-5xl pb-7 text-left">Projects</h2>
-                <ul className="flex gap-3 mb-7">
+                <ul className="flex flex-wrap gap-3 mb-7">
                     {allRolesKeys
                         .sort((role1, role2) =>
                             countPerRole[role1] < countPerRole[role2] ? 1 : -1
