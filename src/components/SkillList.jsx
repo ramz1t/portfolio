@@ -57,7 +57,7 @@ const SkillList = ({ hoveredSkills = [] }) => {
                                                 {cert.title}
                                             </p>
                                             <p className="text-slate-400">
-                                                {`${cert.title} - ${cert.year}`}
+                                                {`${cert.org} - ${cert.year}`}
                                             </p>
                                         </div>
                                     </a>
